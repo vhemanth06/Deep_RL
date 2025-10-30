@@ -1,13 +1,1 @@
-dqn
---env MountainCar-v0
---episodes 300
---batch_size 64
---gamma 0.99
---lr 5e-4
---buffer_capacity 50000
---min_buffer_size 1000
---target_update_steps 500
---epsilon_start 1.0
---epsilon_end 0.05
---epsilon_decay 20000
---save_every 10
+dqn --env MountainCar-v0 --episodes 3000 --batch_size 64 --gamma 0.99 --lr 5e-4 --buffer_capacity 50000 --min_buffer_size 1000 --target_update_steps 500 --epsilon_start 1.0 --epsilon_end 0.05 --epsilon_decay 20000 --save_every 10

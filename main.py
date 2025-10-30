@@ -155,7 +155,7 @@ def save_checkpoint(policy_net, target_net, optimizer, episode, total_steps, ret
 
 
 def load_checkpoint(path, policy_net, target_net, optimizer):
-    ckpt = torch.load(path, map_location=device)
+    ckpt = torch.load(path, map_location=device, weights_only=False)
     policy_net.load_state_dict(ckpt["policy_state_dict"])
     target_net.load_state_dict(ckpt["target_state_dict"])
     optimizer.load_state_dict(ckpt["optimizer_state_dict"])

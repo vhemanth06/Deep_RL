@@ -95,3 +95,81 @@ New best model saved (mean(20)=-20.00) → Pong/checkpoints/best_model.pth
 [DQN] Ep 80/1000 Reward=-21.00 Mean20=-20.10 Eps=0.937
 Saved latest checkpoint (episode 80) → Pong/checkpoints/last_model.pth
 [DQN] Ep 81/1000 Reward=-21.00 Mean20=-20.20 Eps=0.936
+[DQN] Ep 82/1000 Reward=-20.00 Mean20=-20.20 Eps=0.935
+[DQN] Ep 83/1000 Reward=-20.00 Mean20=-20.30 Eps=0.934
+[DQN] Ep 84/1000 Reward=-19.00 Mean20=-20.30 Eps=0.933
+[DQN] Ep 85/1000 Reward=-21.00 Mean20=-20.35 Eps=0.932
+[DQN] Ep 86/1000 Reward=-21.00 Mean20=-20.35 Eps=0.932
+[DQN] Ep 87/1000 Reward=-21.00 Mean20=-20.40 Eps=0.931
+[DQN] Ep 88/1000 Reward=-20.00 Mean20=-20.40 Eps=0.930
+[DQN] Ep 89/1000 Reward=-21.00 Mean20=-20.40 Eps=0.929
+[DQN] Ep 90/1000 Reward=-20.00 Mean20=-20.40 Eps=0.929
+Saved latest checkpoint (episode 90) → Pong/checkpoints/last_model.pth
+[DQN] Ep 91/1000 Reward=-19.00 Mean20=-20.35 Eps=0.928
+[DQN] Ep 92/1000 Reward=-19.00 Mean20=-20.25 Eps=0.927
+[DQN] Ep 93/1000 Reward=-20.00 Mean20=-20.20 Eps=0.926
+[DQN] Ep 94/1000 Reward=-21.00 Mean20=-20.20 Eps=0.925
+[DQN] Ep 95/1000 Reward=-21.00 Mean20=-20.25 Eps=0.925
+[DQN] Ep 96/1000 Reward=-21.00 Mean20=-20.35 Eps=0.924
+[DQN] Ep 97/1000 Reward=-21.00 Mean20=-20.35 Eps=0.923
+[DQN] Ep 98/1000 Reward=-21.00 Mean20=-20.35 Eps=0.923
+[DQN] Ep 99/1000 Reward=-21.00 Mean20=-20.45 Eps=0.922
+[DQN] Ep 100/1000 Reward=-19.00 Mean20=-20.35 Eps=0.921
+Saved latest checkpoint (episode 100) → Pong/checkpoints/last_model.pth
+[DQN] Ep 101/1000 Reward=-20.00 Mean20=-20.30 Eps=0.920
+[DQN] Ep 102/1000 Reward=-21.00 Mean20=-20.35 Eps=0.920
+[DQN] Ep 103/1000 Reward=-20.00 Mean20=-20.35 Eps=0.919
+[DQN] Ep 104/1000 Reward=-20.00 Mean20=-20.40 Eps=0.918
+[DQN] Ep 105/1000 Reward=-21.00 Mean20=-20.40 Eps=0.917
+[DQN] Ep 106/1000 Reward=-20.00 Mean20=-20.35 Eps=0.916
+[DQN] Ep 107/1000 Reward=-21.00 Mean20=-20.35 Eps=0.915
+[DQN] Ep 108/1000 Reward=-20.00 Mean20=-20.35 Eps=0.915
+[DQN] Ep 109/1000 Reward=-21.00 Mean20=-20.35 Eps=0.914
+[DQN] Ep 110/1000 Reward=-19.00 Mean20=-20.30 Eps=0.913
+Saved latest checkpoint (episode 110) → Pong/checkpoints/last_model.pth
+[DQN] Ep 111/1000 Reward=-20.00 Mean20=-20.35 Eps=0.912
+[DQN] Ep 112/1000 Reward=-17.00 Mean20=-20.25 Eps=0.911
+[DQN] Ep 113/1000 Reward=-20.00 Mean20=-20.25 Eps=0.910
+[DQN] Ep 114/1000 Reward=-20.00 Mean20=-20.20 Eps=0.910
+[DQN] Ep 115/1000 Reward=-20.00 Mean20=-20.15 Eps=0.909
+[DQN] Ep 116/1000 Reward=-21.00 Mean20=-20.15 Eps=0.908
+[DQN] Ep 117/1000 Reward=-20.00 Mean20=-20.10 Eps=0.907
+[DQN] Ep 118/1000 Reward=-21.00 Mean20=-20.10 Eps=0.906
+[DQN] Ep 119/1000 Reward=-21.00 Mean20=-20.10 Eps=0.906
+[DQN] Ep 120/1000 Reward=-20.00 Mean20=-20.15 Eps=0.905
+Saved latest checkpoint (episode 120) → Pong/checkpoints/last_model.pth
+[DQN] Ep 121/1000 Reward=-20.00 Mean20=-20.15 Eps=0.904
+[DQN] Ep 122/1000 Reward=-21.00 Mean20=-20.15 Eps=0.903
+[DQN] Ep 123/1000 Reward=-20.00 Mean20=-20.15 Eps=0.903
+[DQN] Ep 124/1000 Reward=-20.00 Mean20=-20.15 Eps=0.902
+Using device: cpu
+Starting DQN on ALE/Pong-v5 for 1000 episodes
+Resuming from BEST model checkpoint
+Traceback (most recent call last):
+  File "/home/azureuser/DeepRL/main.py", line 613, in <module>
+    main()
+  File "/home/azureuser/DeepRL/main.py", line 580, in main
+    dqn_train(
+  File "/home/azureuser/DeepRL/main.py", line 230, in dqn_train
+    start_episode, total_steps, returns = load_checkpoint(ckpt, policy_net, target_net, optimizer)
+  File "/home/azureuser/DeepRL/main.py", line 158, in load_checkpoint
+    ckpt = torch.load(path, map_location=device)
+  File "/home/azureuser/venv/lib/python3.10/site-packages/torch/serialization.py", line 1529, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy._core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([numpy._core.multiarray.scalar])` or the `torch.serialization.safe_globals([numpy._core.multiarray.scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+Using device: cpu
+Starting DQN on ALE/Pong-v5 for 1000 episodes
+Resuming from BEST model checkpoint
+Loaded checkpoint from Pong/checkpoints/best_model.pth
+Resumed from Pong/checkpoints/best_model.pth (Episode 70, Steps 63639)
+[DQN] Ep 71/1000 Reward=-20.00 Mean20=-19.95 Eps=0.944
+[DQN] Ep 72/1000 Reward=-20.00 Mean20=-19.95 Eps=0.943
+[DQN] Ep 73/1000 Reward=-19.00 Mean20=-19.85 Eps=0.942
+[DQN] Ep 74/1000 Reward=-19.00 Mean20=-19.80 Eps=0.941
+[DQN] Ep 75/1000 Reward=-19.00 Mean20=-19.70 Eps=0.940
+[DQN] Ep 76/1000 Reward=-20.00 Mean20=-19.65 Eps=0.940
