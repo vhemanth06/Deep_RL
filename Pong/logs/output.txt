@@ -1,405 +1,352 @@
 Using device: cpu
-Starting DQN on ALE/Pong-v5 for 2000 episodes
+Starting DQN on ALE/Pong-v5 for 1000 episodes
 Resuming from BEST model checkpoint
 No checkpoint found, starting fresh.
-[DQN] Ep 1/2000 Reward=-19.00 Mean20=-19.00 Eps=0.999
-[DQN] Ep 2/2000 Reward=-21.00 Mean20=-20.00 Eps=0.998
-[DQN] Ep 3/2000 Reward=-20.00 Mean20=-20.00 Eps=0.997
-[DQN] Ep 4/2000 Reward=-19.00 Mean20=-19.75 Eps=0.996
-[DQN] Ep 5/2000 Reward=-21.00 Mean20=-20.00 Eps=0.996
-[DQN] Ep 6/2000 Reward=-21.00 Mean20=-20.17 Eps=0.995
-[DQN] Ep 7/2000 Reward=-19.00 Mean20=-20.00 Eps=0.994
-[DQN] Ep 8/2000 Reward=-20.00 Mean20=-20.00 Eps=0.993
-[DQN] Ep 9/2000 Reward=-19.00 Mean20=-19.89 Eps=0.992
-[DQN] Ep 10/2000 Reward=-20.00 Mean20=-19.90 Eps=0.991
+[DQN] Ep 1/1000 Reward=-20.00 Mean20=-20.00 Eps=0.998
+[DQN] Ep 2/1000 Reward=-19.00 Mean20=-19.50 Eps=0.996
+[DQN] Ep 3/1000 Reward=-21.00 Mean20=-20.00 Eps=0.994
+[DQN] Ep 4/1000 Reward=-21.00 Mean20=-20.25 Eps=0.993
+[DQN] Ep 5/1000 Reward=-19.00 Mean20=-20.00 Eps=0.991
+[DQN] Ep 6/1000 Reward=-19.00 Mean20=-19.83 Eps=0.989
+[DQN] Ep 7/1000 Reward=-21.00 Mean20=-20.00 Eps=0.988
+[DQN] Ep 8/1000 Reward=-21.00 Mean20=-20.12 Eps=0.986
+[DQN] Ep 9/1000 Reward=-21.00 Mean20=-20.22 Eps=0.984
+[DQN] Ep 10/1000 Reward=-21.00 Mean20=-20.30 Eps=0.983
 Saved latest checkpoint (episode 10) → Pong/checkpoints/last_model.pth
-New best model saved (mean(20)=-20.00) → Pong/checkpoints/best_model.pth
-[DQN] Ep 11/2000 Reward=-21.00 Mean20=-20.00 Eps=0.991
-[DQN] Ep 12/2000 Reward=-21.00 Mean20=-20.08 Eps=0.990
-[DQN] Ep 13/2000 Reward=-21.00 Mean20=-20.15 Eps=0.989
-[DQN] Ep 14/2000 Reward=-21.00 Mean20=-20.21 Eps=0.988
-[DQN] Ep 15/2000 Reward=-21.00 Mean20=-20.27 Eps=0.988
-[DQN] Ep 16/2000 Reward=-19.00 Mean20=-20.19 Eps=0.987
-[DQN] Ep 17/2000 Reward=-20.00 Mean20=-20.18 Eps=0.986
-[DQN] Ep 18/2000 Reward=-20.00 Mean20=-20.17 Eps=0.985
-[DQN] Ep 19/2000 Reward=-20.00 Mean20=-20.16 Eps=0.984
-[DQN] Ep 20/2000 Reward=-20.00 Mean20=-20.15 Eps=0.983
+New best model saved (mean(20)=-21.00) → Pong/checkpoints/best_model.pth
+[DQN] Ep 11/1000 Reward=-21.00 Mean20=-20.36 Eps=0.981
+[DQN] Ep 12/1000 Reward=-19.00 Mean20=-20.25 Eps=0.979
+[DQN] Ep 13/1000 Reward=-21.00 Mean20=-20.31 Eps=0.978
+[DQN] Ep 14/1000 Reward=-18.00 Mean20=-20.14 Eps=0.976
+[DQN] Ep 15/1000 Reward=-19.00 Mean20=-20.07 Eps=0.974
+[DQN] Ep 16/1000 Reward=-18.00 Mean20=-19.94 Eps=0.972
+[DQN] Ep 17/1000 Reward=-20.00 Mean20=-19.94 Eps=0.970
+[DQN] Ep 18/1000 Reward=-21.00 Mean20=-20.00 Eps=0.968
+[DQN] Ep 19/1000 Reward=-20.00 Mean20=-20.00 Eps=0.967
+[DQN] Ep 20/1000 Reward=-19.00 Mean20=-19.95 Eps=0.965
 Saved latest checkpoint (episode 20) → Pong/checkpoints/last_model.pth
-[DQN] Ep 21/2000 Reward=-19.00 Mean20=-20.15 Eps=0.983
-[DQN] Ep 22/2000 Reward=-21.00 Mean20=-20.15 Eps=0.982
-[DQN] Ep 23/2000 Reward=-21.00 Mean20=-20.20 Eps=0.981
-[DQN] Ep 24/2000 Reward=-21.00 Mean20=-20.30 Eps=0.980
-[DQN] Ep 25/2000 Reward=-21.00 Mean20=-20.30 Eps=0.980
-[DQN] Ep 26/2000 Reward=-19.00 Mean20=-20.20 Eps=0.979
-[DQN] Ep 27/2000 Reward=-21.00 Mean20=-20.30 Eps=0.978
-[DQN] Ep 28/2000 Reward=-20.00 Mean20=-20.30 Eps=0.977
-[DQN] Ep 29/2000 Reward=-20.00 Mean20=-20.35 Eps=0.976
-[DQN] Ep 30/2000 Reward=-20.00 Mean20=-20.35 Eps=0.975
+New best model saved (mean(20)=-19.95) → Pong/checkpoints/best_model.pth
+[DQN] Ep 21/1000 Reward=-21.00 Mean20=-20.00 Eps=0.963
+[DQN] Ep 22/1000 Reward=-21.00 Mean20=-20.10 Eps=0.961
+[DQN] Ep 23/1000 Reward=-20.00 Mean20=-20.05 Eps=0.959
+[DQN] Ep 24/1000 Reward=-21.00 Mean20=-20.05 Eps=0.958
+[DQN] Ep 25/1000 Reward=-19.00 Mean20=-20.05 Eps=0.956
+[DQN] Ep 26/1000 Reward=-20.00 Mean20=-20.10 Eps=0.954
+[DQN] Ep 27/1000 Reward=-21.00 Mean20=-20.10 Eps=0.953
+[DQN] Ep 28/1000 Reward=-20.00 Mean20=-20.05 Eps=0.951
+[DQN] Ep 29/1000 Reward=-21.00 Mean20=-20.05 Eps=0.950
+[DQN] Ep 30/1000 Reward=-20.00 Mean20=-20.00 Eps=0.948
 Saved latest checkpoint (episode 30) → Pong/checkpoints/last_model.pth
-[DQN] Ep 31/2000 Reward=-21.00 Mean20=-20.35 Eps=0.974
-[DQN] Ep 32/2000 Reward=-20.00 Mean20=-20.30 Eps=0.973
-[DQN] Ep 33/2000 Reward=-19.00 Mean20=-20.20 Eps=0.972
-[DQN] Ep 34/2000 Reward=-21.00 Mean20=-20.20 Eps=0.972
-[DQN] Ep 35/2000 Reward=-21.00 Mean20=-20.20 Eps=0.971
-[DQN] Ep 36/2000 Reward=-21.00 Mean20=-20.30 Eps=0.970
-[DQN] Ep 37/2000 Reward=-21.00 Mean20=-20.35 Eps=0.970
-[DQN] Ep 38/2000 Reward=-20.00 Mean20=-20.35 Eps=0.969
-[DQN] Ep 39/2000 Reward=-21.00 Mean20=-20.40 Eps=0.968
-[DQN] Ep 40/2000 Reward=-21.00 Mean20=-20.45 Eps=0.967
+[DQN] Ep 31/1000 Reward=-21.00 Mean20=-20.00 Eps=0.947
+[DQN] Ep 32/1000 Reward=-21.00 Mean20=-20.10 Eps=0.945
+[DQN] Ep 33/1000 Reward=-20.00 Mean20=-20.05 Eps=0.943
+[DQN] Ep 34/1000 Reward=-20.00 Mean20=-20.15 Eps=0.942
+[DQN] Ep 35/1000 Reward=-20.00 Mean20=-20.20 Eps=0.940
+[DQN] Ep 36/1000 Reward=-20.00 Mean20=-20.30 Eps=0.938
+[DQN] Ep 37/1000 Reward=-21.00 Mean20=-20.35 Eps=0.936
+[DQN] Ep 38/1000 Reward=-19.00 Mean20=-20.25 Eps=0.934
+[DQN] Ep 39/1000 Reward=-21.00 Mean20=-20.30 Eps=0.933
+[DQN] Ep 40/1000 Reward=-21.00 Mean20=-20.40 Eps=0.931
 Saved latest checkpoint (episode 40) → Pong/checkpoints/last_model.pth
-[DQN] Ep 41/2000 Reward=-21.00 Mean20=-20.55 Eps=0.967
-[DQN] Ep 42/2000 Reward=-19.00 Mean20=-20.45 Eps=0.966
-[DQN] Ep 43/2000 Reward=-20.00 Mean20=-20.40 Eps=0.965
-[DQN] Ep 44/2000 Reward=-21.00 Mean20=-20.40 Eps=0.964
-[DQN] Ep 45/2000 Reward=-18.00 Mean20=-20.25 Eps=0.963
-[DQN] Ep 46/2000 Reward=-20.00 Mean20=-20.30 Eps=0.962
-[DQN] Ep 47/2000 Reward=-19.00 Mean20=-20.20 Eps=0.961
-[DQN] Ep 48/2000 Reward=-21.00 Mean20=-20.25 Eps=0.960
-[DQN] Ep 49/2000 Reward=-20.00 Mean20=-20.25 Eps=0.960
-[DQN] Ep 50/2000 Reward=-21.00 Mean20=-20.30 Eps=0.959
+[DQN] Ep 41/1000 Reward=-20.00 Mean20=-20.35 Eps=0.930
+[DQN] Ep 42/1000 Reward=-20.00 Mean20=-20.30 Eps=0.928
+[DQN] Ep 43/1000 Reward=-20.00 Mean20=-20.30 Eps=0.926
+[DQN] Ep 44/1000 Reward=-21.00 Mean20=-20.30 Eps=0.924
+[DQN] Ep 45/1000 Reward=-21.00 Mean20=-20.40 Eps=0.923
+[DQN] Ep 46/1000 Reward=-21.00 Mean20=-20.45 Eps=0.921
+[DQN] Ep 47/1000 Reward=-21.00 Mean20=-20.45 Eps=0.920
+[DQN] Ep 48/1000 Reward=-20.00 Mean20=-20.45 Eps=0.918
+[DQN] Ep 49/1000 Reward=-21.00 Mean20=-20.45 Eps=0.917
+[DQN] Ep 50/1000 Reward=-18.00 Mean20=-20.35 Eps=0.915
 Saved latest checkpoint (episode 50) → Pong/checkpoints/last_model.pth
-[DQN] Ep 51/2000 Reward=-21.00 Mean20=-20.30 Eps=0.958
-[DQN] Ep 52/2000 Reward=-21.00 Mean20=-20.35 Eps=0.957
-[DQN] Ep 53/2000 Reward=-20.00 Mean20=-20.40 Eps=0.957
-[DQN] Ep 54/2000 Reward=-20.00 Mean20=-20.35 Eps=0.956
-[DQN] Ep 55/2000 Reward=-20.00 Mean20=-20.30 Eps=0.955
-[DQN] Ep 56/2000 Reward=-21.00 Mean20=-20.30 Eps=0.954
-[DQN] Ep 57/2000 Reward=-19.00 Mean20=-20.20 Eps=0.953
-[DQN] Ep 58/2000 Reward=-21.00 Mean20=-20.25 Eps=0.953
-[DQN] Ep 59/2000 Reward=-21.00 Mean20=-20.25 Eps=0.952
-[DQN] Ep 60/2000 Reward=-20.00 Mean20=-20.20 Eps=0.951
+[DQN] Ep 51/1000 Reward=-21.00 Mean20=-20.35 Eps=0.913
+[DQN] Ep 52/1000 Reward=-21.00 Mean20=-20.35 Eps=0.912
+[DQN] Ep 53/1000 Reward=-20.00 Mean20=-20.35 Eps=0.910
+[DQN] Ep 54/1000 Reward=-21.00 Mean20=-20.40 Eps=0.909
+[DQN] Ep 55/1000 Reward=-21.00 Mean20=-20.45 Eps=0.907
+[DQN] Ep 56/1000 Reward=-21.00 Mean20=-20.50 Eps=0.906
+[DQN] Ep 57/1000 Reward=-19.00 Mean20=-20.40 Eps=0.904
+[DQN] Ep 58/1000 Reward=-20.00 Mean20=-20.45 Eps=0.902
+[DQN] Ep 59/1000 Reward=-19.00 Mean20=-20.35 Eps=0.900
+[DQN] Ep 60/1000 Reward=-21.00 Mean20=-20.35 Eps=0.898
 Saved latest checkpoint (episode 60) → Pong/checkpoints/last_model.pth
-[DQN] Ep 61/2000 Reward=-21.00 Mean20=-20.20 Eps=0.950
-[DQN] Ep 62/2000 Reward=-21.00 Mean20=-20.30 Eps=0.950
-[DQN] Ep 63/2000 Reward=-21.00 Mean20=-20.35 Eps=0.949
-[DQN] Ep 64/2000 Reward=-19.00 Mean20=-20.25 Eps=0.948
-[DQN] Ep 65/2000 Reward=-21.00 Mean20=-20.40 Eps=0.947
-[DQN] Ep 66/2000 Reward=-18.00 Mean20=-20.30 Eps=0.946
-[DQN] Ep 67/2000 Reward=-20.00 Mean20=-20.35 Eps=0.946
-[DQN] Ep 68/2000 Reward=-21.00 Mean20=-20.35 Eps=0.945
-[DQN] Ep 69/2000 Reward=-20.00 Mean20=-20.35 Eps=0.944
-[DQN] Ep 70/2000 Reward=-21.00 Mean20=-20.35 Eps=0.943
+[DQN] Ep 61/1000 Reward=-20.00 Mean20=-20.35 Eps=0.897
+[DQN] Ep 62/1000 Reward=-20.00 Mean20=-20.35 Eps=0.895
+[DQN] Ep 63/1000 Reward=-20.00 Mean20=-20.35 Eps=0.893
+[DQN] Ep 64/1000 Reward=-21.00 Mean20=-20.35 Eps=0.892
+[DQN] Ep 65/1000 Reward=-21.00 Mean20=-20.35 Eps=0.890
+[DQN] Ep 66/1000 Reward=-20.00 Mean20=-20.30 Eps=0.889
+[DQN] Ep 67/1000 Reward=-21.00 Mean20=-20.30 Eps=0.887
+[DQN] Ep 68/1000 Reward=-21.00 Mean20=-20.35 Eps=0.886
+[DQN] Ep 69/1000 Reward=-21.00 Mean20=-20.35 Eps=0.884
+[DQN] Ep 70/1000 Reward=-19.00 Mean20=-20.40 Eps=0.883
 Saved latest checkpoint (episode 70) → Pong/checkpoints/last_model.pth
-[DQN] Ep 71/2000 Reward=-17.00 Mean20=-20.15 Eps=0.942
-[DQN] Ep 72/2000 Reward=-21.00 Mean20=-20.15 Eps=0.941
-[DQN] Ep 73/2000 Reward=-20.00 Mean20=-20.15 Eps=0.941
-[DQN] Ep 74/2000 Reward=-20.00 Mean20=-20.15 Eps=0.940
-[DQN] Ep 75/2000 Reward=-20.00 Mean20=-20.15 Eps=0.939
-[DQN] Ep 76/2000 Reward=-20.00 Mean20=-20.10 Eps=0.938
-[DQN] Ep 77/2000 Reward=-21.00 Mean20=-20.20 Eps=0.937
-[DQN] Ep 78/2000 Reward=-20.00 Mean20=-20.15 Eps=0.936
-[DQN] Ep 79/2000 Reward=-21.00 Mean20=-20.15 Eps=0.936
-[DQN] Ep 80/2000 Reward=-21.00 Mean20=-20.20 Eps=0.935
+[DQN] Ep 71/1000 Reward=-19.00 Mean20=-20.30 Eps=0.881
+[DQN] Ep 72/1000 Reward=-19.00 Mean20=-20.20 Eps=0.879
+[DQN] Ep 73/1000 Reward=-19.00 Mean20=-20.15 Eps=0.877
+[DQN] Ep 74/1000 Reward=-20.00 Mean20=-20.10 Eps=0.876
+[DQN] Ep 75/1000 Reward=-18.00 Mean20=-19.95 Eps=0.874
+[DQN] Ep 76/1000 Reward=-21.00 Mean20=-19.95 Eps=0.872
+[DQN] Ep 77/1000 Reward=-20.00 Mean20=-20.00 Eps=0.871
+[DQN] Ep 78/1000 Reward=-21.00 Mean20=-20.05 Eps=0.869
+[DQN] Ep 79/1000 Reward=-21.00 Mean20=-20.15 Eps=0.867
+[DQN] Ep 80/1000 Reward=-20.00 Mean20=-20.10 Eps=0.865
 Saved latest checkpoint (episode 80) → Pong/checkpoints/last_model.pth
-[DQN] Ep 81/2000 Reward=-20.00 Mean20=-20.15 Eps=0.934
-[DQN] Ep 82/2000 Reward=-21.00 Mean20=-20.15 Eps=0.933
-[DQN] Ep 83/2000 Reward=-21.00 Mean20=-20.15 Eps=0.933
-[DQN] Ep 84/2000 Reward=-19.00 Mean20=-20.15 Eps=0.932
-[DQN] Ep 85/2000 Reward=-21.00 Mean20=-20.15 Eps=0.931
-[DQN] Ep 86/2000 Reward=-21.00 Mean20=-20.30 Eps=0.930
-[DQN] Ep 87/2000 Reward=-20.00 Mean20=-20.30 Eps=0.930
-[DQN] Ep 88/2000 Reward=-20.00 Mean20=-20.25 Eps=0.929
-[DQN] Ep 89/2000 Reward=-19.00 Mean20=-20.20 Eps=0.928
-[DQN] Ep 90/2000 Reward=-21.00 Mean20=-20.20 Eps=0.927
+[DQN] Ep 81/1000 Reward=-19.00 Mean20=-20.05 Eps=0.863
+[DQN] Ep 82/1000 Reward=-21.00 Mean20=-20.10 Eps=0.862
+[DQN] Ep 83/1000 Reward=-21.00 Mean20=-20.15 Eps=0.860
+[DQN] Ep 84/1000 Reward=-19.00 Mean20=-20.05 Eps=0.858
+[DQN] Ep 85/1000 Reward=-20.00 Mean20=-20.00 Eps=0.857
+[DQN] Ep 86/1000 Reward=-20.00 Mean20=-20.00 Eps=0.855
+[DQN] Ep 87/1000 Reward=-21.00 Mean20=-20.00 Eps=0.854
+[DQN] Ep 88/1000 Reward=-20.00 Mean20=-19.95 Eps=0.852
+[DQN] Ep 89/1000 Reward=-19.00 Mean20=-19.85 Eps=0.850
+[DQN] Ep 90/1000 Reward=-21.00 Mean20=-19.95 Eps=0.849
 Saved latest checkpoint (episode 90) → Pong/checkpoints/last_model.pth
-[DQN] Ep 91/2000 Reward=-21.00 Mean20=-20.40 Eps=0.926
-[DQN] Ep 92/2000 Reward=-20.00 Mean20=-20.35 Eps=0.926
-[DQN] Ep 93/2000 Reward=-21.00 Mean20=-20.40 Eps=0.925
-[DQN] Ep 94/2000 Reward=-21.00 Mean20=-20.45 Eps=0.924
-[DQN] Ep 95/2000 Reward=-19.00 Mean20=-20.40 Eps=0.923
-[DQN] Ep 96/2000 Reward=-18.00 Mean20=-20.30 Eps=0.922
-[DQN] Ep 97/2000 Reward=-21.00 Mean20=-20.30 Eps=0.922
-[DQN] Ep 98/2000 Reward=-21.00 Mean20=-20.35 Eps=0.921
-[DQN] Ep 99/2000 Reward=-21.00 Mean20=-20.35 Eps=0.920
-[DQN] Ep 100/2000 Reward=-18.00 Mean20=-20.20 Eps=0.919
+[DQN] Ep 91/1000 Reward=-19.00 Mean20=-19.95 Eps=0.847
+[DQN] Ep 92/1000 Reward=-19.00 Mean20=-19.95 Eps=0.845
+[DQN] Ep 93/1000 Reward=-19.00 Mean20=-19.95 Eps=0.843
+[DQN] Ep 94/1000 Reward=-19.00 Mean20=-19.90 Eps=0.841
+[DQN] Ep 95/1000 Reward=-20.00 Mean20=-20.00 Eps=0.839
+[DQN] Ep 96/1000 Reward=-21.00 Mean20=-20.00 Eps=0.838
+[DQN] Ep 97/1000 Reward=-21.00 Mean20=-20.05 Eps=0.837
+[DQN] Ep 98/1000 Reward=-20.00 Mean20=-20.00 Eps=0.835
+[DQN] Ep 99/1000 Reward=-18.00 Mean20=-19.85 Eps=0.833
+[DQN] Ep 100/1000 Reward=-19.00 Mean20=-19.80 Eps=0.831
 Saved latest checkpoint (episode 100) → Pong/checkpoints/last_model.pth
-[DQN] Ep 101/2000 Reward=-21.00 Mean20=-20.25 Eps=0.918
-[DQN] Ep 102/2000 Reward=-21.00 Mean20=-20.25 Eps=0.918
-[DQN] Ep 103/2000 Reward=-21.00 Mean20=-20.25 Eps=0.917
-[DQN] Ep 104/2000 Reward=-19.00 Mean20=-20.25 Eps=0.916
-[DQN] Ep 105/2000 Reward=-20.00 Mean20=-20.20 Eps=0.915
-[DQN] Ep 106/2000 Reward=-17.00 Mean20=-20.00 Eps=0.914
-[DQN] Ep 107/2000 Reward=-21.00 Mean20=-20.05 Eps=0.914
-[DQN] Ep 108/2000 Reward=-21.00 Mean20=-20.10 Eps=0.913
-[DQN] Ep 109/2000 Reward=-20.00 Mean20=-20.15 Eps=0.912
-[DQN] Ep 110/2000 Reward=-21.00 Mean20=-20.15 Eps=0.911
+New best model saved (mean(20)=-19.80) → Pong/checkpoints/best_model.pth
+[DQN] Ep 101/1000 Reward=-20.00 Mean20=-19.85 Eps=0.830
+[DQN] Ep 102/1000 Reward=-21.00 Mean20=-19.85 Eps=0.828
+[DQN] Ep 103/1000 Reward=-19.00 Mean20=-19.75 Eps=0.826
+[DQN] Ep 104/1000 Reward=-20.00 Mean20=-19.80 Eps=0.825
+[DQN] Ep 105/1000 Reward=-21.00 Mean20=-19.85 Eps=0.823
+[DQN] Ep 106/1000 Reward=-20.00 Mean20=-19.85 Eps=0.822
+[DQN] Ep 107/1000 Reward=-21.00 Mean20=-19.85 Eps=0.821
+[DQN] Ep 108/1000 Reward=-21.00 Mean20=-19.90 Eps=0.819
+[DQN] Ep 109/1000 Reward=-21.00 Mean20=-20.00 Eps=0.817
+[DQN] Ep 110/1000 Reward=-20.00 Mean20=-19.95 Eps=0.816
 Saved latest checkpoint (episode 110) → Pong/checkpoints/last_model.pth
-[DQN] Ep 111/2000 Reward=-19.00 Mean20=-20.05 Eps=0.911
-[DQN] Ep 112/2000 Reward=-21.00 Mean20=-20.10 Eps=0.910
-[DQN] Ep 113/2000 Reward=-21.00 Mean20=-20.10 Eps=0.909
-[DQN] Ep 114/2000 Reward=-19.00 Mean20=-20.00 Eps=0.908
-[DQN] Ep 115/2000 Reward=-19.00 Mean20=-20.00 Eps=0.907
-[DQN] Ep 116/2000 Reward=-20.00 Mean20=-20.10 Eps=0.907
-[DQN] Ep 117/2000 Reward=-20.00 Mean20=-20.05 Eps=0.906
-[DQN] Ep 118/2000 Reward=-21.00 Mean20=-20.05 Eps=0.905
-[DQN] Ep 119/2000 Reward=-21.00 Mean20=-20.05 Eps=0.904
-[DQN] Ep 120/2000 Reward=-21.00 Mean20=-20.20 Eps=0.904
+[DQN] Ep 111/1000 Reward=-20.00 Mean20=-20.00 Eps=0.814
+[DQN] Ep 112/1000 Reward=-18.00 Mean20=-19.95 Eps=0.813
+[DQN] Ep 113/1000 Reward=-20.00 Mean20=-20.00 Eps=0.811
+[DQN] Ep 114/1000 Reward=-20.00 Mean20=-20.05 Eps=0.809
+[DQN] Ep 115/1000 Reward=-21.00 Mean20=-20.10 Eps=0.808
+[DQN] Ep 116/1000 Reward=-19.00 Mean20=-20.00 Eps=0.806
+[DQN] Ep 117/1000 Reward=-18.00 Mean20=-19.85 Eps=0.805
+[DQN] Ep 118/1000 Reward=-20.00 Mean20=-19.85 Eps=0.803
+[DQN] Ep 119/1000 Reward=-20.00 Mean20=-19.95 Eps=0.802
+[DQN] Ep 120/1000 Reward=-19.00 Mean20=-19.95 Eps=0.800
 Saved latest checkpoint (episode 120) → Pong/checkpoints/last_model.pth
-[DQN] Ep 121/2000 Reward=-19.00 Mean20=-20.10 Eps=0.903
-[DQN] Ep 122/2000 Reward=-20.00 Mean20=-20.05 Eps=0.902
-[DQN] Ep 123/2000 Reward=-19.00 Mean20=-19.95 Eps=0.901
-[DQN] Ep 124/2000 Reward=-20.00 Mean20=-20.00 Eps=0.900
-[DQN] Ep 125/2000 Reward=-21.00 Mean20=-20.05 Eps=0.900
-[DQN] Ep 126/2000 Reward=-20.00 Mean20=-20.20 Eps=0.899
-[DQN] Ep 127/2000 Reward=-21.00 Mean20=-20.20 Eps=0.898
-[DQN] Ep 128/2000 Reward=-21.00 Mean20=-20.20 Eps=0.897
-[DQN] Ep 129/2000 Reward=-19.00 Mean20=-20.15 Eps=0.896
-[DQN] Ep 130/2000 Reward=-20.00 Mean20=-20.10 Eps=0.896
+[DQN] Ep 121/1000 Reward=-21.00 Mean20=-20.00 Eps=0.798
+[DQN] Ep 122/1000 Reward=-21.00 Mean20=-20.00 Eps=0.797
+[DQN] Ep 123/1000 Reward=-18.00 Mean20=-19.95 Eps=0.795
+[DQN] Ep 124/1000 Reward=-20.00 Mean20=-19.95 Eps=0.793
+[DQN] Ep 125/1000 Reward=-20.00 Mean20=-19.90 Eps=0.792
+[DQN] Ep 126/1000 Reward=-19.00 Mean20=-19.85 Eps=0.790
+[DQN] Ep 127/1000 Reward=-19.00 Mean20=-19.75 Eps=0.789
+[DQN] Ep 128/1000 Reward=-20.00 Mean20=-19.70 Eps=0.787
+[DQN] Ep 129/1000 Reward=-17.00 Mean20=-19.50 Eps=0.785
+[DQN] Ep 130/1000 Reward=-17.00 Mean20=-19.35 Eps=0.783
 Saved latest checkpoint (episode 130) → Pong/checkpoints/last_model.pth
-[DQN] Ep 131/2000 Reward=-19.00 Mean20=-20.10 Eps=0.895
-[DQN] Ep 132/2000 Reward=-20.00 Mean20=-20.05 Eps=0.894
-[DQN] Ep 133/2000 Reward=-21.00 Mean20=-20.05 Eps=0.893
-[DQN] Ep 134/2000 Reward=-18.00 Mean20=-20.00 Eps=0.892
-[DQN] Ep 135/2000 Reward=-20.00 Mean20=-20.05 Eps=0.891
-[DQN] Ep 136/2000 Reward=-19.00 Mean20=-20.00 Eps=0.891
-[DQN] Ep 137/2000 Reward=-21.00 Mean20=-20.05 Eps=0.890
-[DQN] Ep 138/2000 Reward=-20.00 Mean20=-20.00 Eps=0.889
-[DQN] Ep 139/2000 Reward=-18.00 Mean20=-19.85 Eps=0.888
-[DQN] Ep 140/2000 Reward=-19.00 Mean20=-19.75 Eps=0.887
-Saved latest checkpoint (episode 140) → Pong/checkpoints/last_model.pth
-New best model saved (mean(20)=-19.75) → Pong/checkpoints/best_model.pth
-[DQN] Ep 141/2000 Reward=-19.00 Mean20=-19.75 Eps=0.886
-[DQN] Ep 142/2000 Reward=-20.00 Mean20=-19.75 Eps=0.886
-[DQN] Ep 143/2000 Reward=-20.00 Mean20=-19.80 Eps=0.885
-[DQN] Ep 144/2000 Reward=-20.00 Mean20=-19.80 Eps=0.884
-[DQN] Ep 145/2000 Reward=-20.00 Mean20=-19.75 Eps=0.883
-[DQN] Ep 146/2000 Reward=-19.00 Mean20=-19.70 Eps=0.882
-[DQN] Ep 147/2000 Reward=-21.00 Mean20=-19.70 Eps=0.882
-[DQN] Ep 148/2000 Reward=-21.00 Mean20=-19.70 Eps=0.881
-[DQN] Ep 149/2000 Reward=-21.00 Mean20=-19.80 Eps=0.880
-[DQN] Ep 150/2000 Reward=-20.00 Mean20=-19.80 Eps=0.880
-Saved latest checkpoint (episode 150) → Pong/checkpoints/last_model.pth
-[DQN] Ep 151/2000 Reward=-17.00 Mean20=-19.70 Eps=0.879
-[DQN] Ep 152/2000 Reward=-20.00 Mean20=-19.70 Eps=0.878
-[DQN] Ep 153/2000 Reward=-19.00 Mean20=-19.60 Eps=0.877
-[DQN] Ep 154/2000 Reward=-18.00 Mean20=-19.60 Eps=0.876
-[DQN] Ep 155/2000 Reward=-21.00 Mean20=-19.65 Eps=0.875
-[DQN] Ep 156/2000 Reward=-19.00 Mean20=-19.65 Eps=0.875
-[DQN] Ep 157/2000 Reward=-21.00 Mean20=-19.65 Eps=0.874
-[DQN] Ep 158/2000 Reward=-20.00 Mean20=-19.65 Eps=0.873
-[DQN] Ep 159/2000 Reward=-19.00 Mean20=-19.70 Eps=0.872
-[DQN] Ep 160/2000 Reward=-20.00 Mean20=-19.75 Eps=0.871
-Saved latest checkpoint (episode 160) → Pong/checkpoints/last_model.pth
-[DQN] Ep 161/2000 Reward=-19.00 Mean20=-19.75 Eps=0.870
-[DQN] Ep 162/2000 Reward=-20.00 Mean20=-19.75 Eps=0.869
-[DQN] Ep 163/2000 Reward=-20.00 Mean20=-19.75 Eps=0.869
-[DQN] Ep 164/2000 Reward=-21.00 Mean20=-19.80 Eps=0.868
-[DQN] Ep 165/2000 Reward=-20.00 Mean20=-19.80 Eps=0.867
-[DQN] Ep 166/2000 Reward=-18.00 Mean20=-19.75 Eps=0.866
-[DQN] Ep 167/2000 Reward=-20.00 Mean20=-19.70 Eps=0.866
-[DQN] Ep 168/2000 Reward=-20.00 Mean20=-19.65 Eps=0.865
-[DQN] Ep 169/2000 Reward=-17.00 Mean20=-19.45 Eps=0.864
-[DQN] Ep 170/2000 Reward=-20.00 Mean20=-19.45 Eps=0.863
-Saved latest checkpoint (episode 170) → Pong/checkpoints/last_model.pth
-New best model saved (mean(20)=-19.45) → Pong/checkpoints/best_model.pth
-[DQN] Ep 171/2000 Reward=-19.00 Mean20=-19.55 Eps=0.862
-[DQN] Ep 172/2000 Reward=-21.00 Mean20=-19.60 Eps=0.861
-[DQN] Ep 173/2000 Reward=-21.00 Mean20=-19.70 Eps=0.861
-[DQN] Ep 174/2000 Reward=-20.00 Mean20=-19.80 Eps=0.860
-[DQN] Ep 175/2000 Reward=-19.00 Mean20=-19.70 Eps=0.859
-[DQN] Ep 176/2000 Reward=-20.00 Mean20=-19.75 Eps=0.858
-[DQN] Ep 177/2000 Reward=-20.00 Mean20=-19.70 Eps=0.858
-[DQN] Ep 178/2000 Reward=-20.00 Mean20=-19.70 Eps=0.857
-[DQN] Ep 179/2000 Reward=-21.00 Mean20=-19.80 Eps=0.856
-[DQN] Ep 180/2000 Reward=-19.00 Mean20=-19.75 Eps=0.855
-Saved latest checkpoint (episode 180) → Pong/checkpoints/last_model.pth
-[DQN] Ep 181/2000 Reward=-20.00 Mean20=-19.80 Eps=0.855
-[DQN] Ep 182/2000 Reward=-19.00 Mean20=-19.75 Eps=0.854
-[DQN] Ep 183/2000 Reward=-21.00 Mean20=-19.80 Eps=0.853
-[DQN] Ep 184/2000 Reward=-18.00 Mean20=-19.65 Eps=0.852
-[DQN] Ep 185/2000 Reward=-21.00 Mean20=-19.70 Eps=0.852
-[DQN] Ep 186/2000 Reward=-19.00 Mean20=-19.75 Eps=0.851
-[DQN] Ep 187/2000 Reward=-21.00 Mean20=-19.80 Eps=0.850
-[DQN] Ep 188/2000 Reward=-19.00 Mean20=-19.75 Eps=0.849
-[DQN] Ep 189/2000 Reward=-19.00 Mean20=-19.85 Eps=0.848
-[DQN] Ep 190/2000 Reward=-20.00 Mean20=-19.85 Eps=0.848
-Saved latest checkpoint (episode 190) → Pong/checkpoints/last_model.pth
-[DQN] Ep 191/2000 Reward=-21.00 Mean20=-19.95 Eps=0.847
-[DQN] Ep 192/2000 Reward=-20.00 Mean20=-19.90 Eps=0.846
-[DQN] Ep 193/2000 Reward=-21.00 Mean20=-19.90 Eps=0.845
-[DQN] Ep 194/2000 Reward=-18.00 Mean20=-19.80 Eps=0.844
-[DQN] Ep 195/2000 Reward=-19.00 Mean20=-19.80 Eps=0.844
-[DQN] Ep 196/2000 Reward=-19.00 Mean20=-19.75 Eps=0.843
-[DQN] Ep 197/2000 Reward=-20.00 Mean20=-19.75 Eps=0.842
-[DQN] Ep 198/2000 Reward=-19.00 Mean20=-19.70 Eps=0.841
-[DQN] Ep 199/2000 Reward=-20.00 Mean20=-19.65 Eps=0.840
-[DQN] Ep 200/2000 Reward=-20.00 Mean20=-19.70 Eps=0.840
-Saved latest checkpoint (episode 200) → Pong/checkpoints/last_model.pth
-[DQN] Ep 201/2000 Reward=-20.00 Mean20=-19.70 Eps=0.839
-[DQN] Ep 202/2000 Reward=-20.00 Mean20=-19.75 Eps=0.838
-[DQN] Ep 203/2000 Reward=-20.00 Mean20=-19.70 Eps=0.838
-[DQN] Ep 204/2000 Reward=-20.00 Mean20=-19.80 Eps=0.837
-[DQN] Ep 205/2000 Reward=-16.00 Mean20=-19.55 Eps=0.836
-[DQN] Ep 206/2000 Reward=-21.00 Mean20=-19.65 Eps=0.835
-[DQN] Ep 207/2000 Reward=-20.00 Mean20=-19.60 Eps=0.834
-[DQN] Ep 208/2000 Reward=-21.00 Mean20=-19.70 Eps=0.834
-[DQN] Ep 209/2000 Reward=-20.00 Mean20=-19.75 Eps=0.833
-[DQN] Ep 210/2000 Reward=-19.00 Mean20=-19.70 Eps=0.832
-Saved latest checkpoint (episode 210) → Pong/checkpoints/last_model.pth
-[DQN] Ep 211/2000 Reward=-19.00 Mean20=-19.60 Eps=0.831
-[DQN] Ep 212/2000 Reward=-18.00 Mean20=-19.50 Eps=0.830
-[DQN] Ep 213/2000 Reward=-18.00 Mean20=-19.35 Eps=0.830
-[DQN] Ep 214/2000 Reward=-16.00 Mean20=-19.25 Eps=0.829
-[DQN] Ep 215/2000 Reward=-21.00 Mean20=-19.35 Eps=0.828
-[DQN] Ep 216/2000 Reward=-19.00 Mean20=-19.35 Eps=0.827
-[DQN] Ep 217/2000 Reward=-21.00 Mean20=-19.40 Eps=0.827
-[DQN] Ep 218/2000 Reward=-20.00 Mean20=-19.45 Eps=0.826
-[DQN] Ep 219/2000 Reward=-21.00 Mean20=-19.50 Eps=0.825
-[DQN] Ep 220/2000 Reward=-19.00 Mean20=-19.45 Eps=0.824
-Saved latest checkpoint (episode 220) → Pong/checkpoints/last_model.pth
-[DQN] Ep 221/2000 Reward=-21.00 Mean20=-19.50 Eps=0.823
-[DQN] Ep 222/2000 Reward=-16.00 Mean20=-19.30 Eps=0.822
-[DQN] Ep 223/2000 Reward=-20.00 Mean20=-19.30 Eps=0.822
-[DQN] Ep 224/2000 Reward=-21.00 Mean20=-19.35 Eps=0.821
-[DQN] Ep 225/2000 Reward=-18.00 Mean20=-19.45 Eps=0.820
-[DQN] Ep 226/2000 Reward=-19.00 Mean20=-19.35 Eps=0.819
-[DQN] Ep 227/2000 Reward=-21.00 Mean20=-19.40 Eps=0.819
-[DQN] Ep 228/2000 Reward=-20.00 Mean20=-19.35 Eps=0.818
-[DQN] Ep 229/2000 Reward=-20.00 Mean20=-19.35 Eps=0.817
-[DQN] Ep 230/2000 Reward=-21.00 Mean20=-19.45 Eps=0.816
-Saved latest checkpoint (episode 230) → Pong/checkpoints/last_model.pth
-[DQN] Ep 231/2000 Reward=-20.00 Mean20=-19.50 Eps=0.815
-[DQN] Ep 232/2000 Reward=-21.00 Mean20=-19.65 Eps=0.815
-[DQN] Ep 233/2000 Reward=-19.00 Mean20=-19.70 Eps=0.814
-[DQN] Ep 234/2000 Reward=-21.00 Mean20=-19.95 Eps=0.813
-[DQN] Ep 235/2000 Reward=-18.00 Mean20=-19.80 Eps=0.812
-[DQN] Ep 236/2000 Reward=-21.00 Mean20=-19.90 Eps=0.811
-[DQN] Ep 237/2000 Reward=-19.00 Mean20=-19.80 Eps=0.811
-[DQN] Ep 238/2000 Reward=-21.00 Mean20=-19.85 Eps=0.810
-[DQN] Ep 239/2000 Reward=-20.00 Mean20=-19.80 Eps=0.809
-[DQN] Ep 240/2000 Reward=-19.00 Mean20=-19.80 Eps=0.808
-Saved latest checkpoint (episode 240) → Pong/checkpoints/last_model.pth
-[DQN] Ep 241/2000 Reward=-20.00 Mean20=-19.75 Eps=0.808
-[DQN] Ep 242/2000 Reward=-18.00 Mean20=-19.85 Eps=0.807
-[DQN] Ep 243/2000 Reward=-21.00 Mean20=-19.90 Eps=0.806
-[DQN] Ep 244/2000 Reward=-20.00 Mean20=-19.85 Eps=0.805
-[DQN] Ep 245/2000 Reward=-20.00 Mean20=-19.95 Eps=0.804
-[DQN] Ep 246/2000 Reward=-19.00 Mean20=-19.95 Eps=0.804
-[DQN] Ep 247/2000 Reward=-20.00 Mean20=-19.90 Eps=0.803
-[DQN] Ep 248/2000 Reward=-20.00 Mean20=-19.90 Eps=0.802
-[DQN] Ep 249/2000 Reward=-20.00 Mean20=-19.90 Eps=0.801
-[DQN] Ep 250/2000 Reward=-20.00 Mean20=-19.85 Eps=0.800
-Saved latest checkpoint (episode 250) → Pong/checkpoints/last_model.pth
-[DQN] Ep 251/2000 Reward=-19.00 Mean20=-19.80 Eps=0.800
-[DQN] Ep 252/2000 Reward=-18.00 Mean20=-19.65 Eps=0.799
-[DQN] Ep 253/2000 Reward=-18.00 Mean20=-19.60 Eps=0.798
-[DQN] Ep 254/2000 Reward=-19.00 Mean20=-19.50 Eps=0.797
-[DQN] Ep 255/2000 Reward=-20.00 Mean20=-19.60 Eps=0.796
-[DQN] Ep 256/2000 Reward=-20.00 Mean20=-19.55 Eps=0.796
-[DQN] Ep 257/2000 Reward=-19.00 Mean20=-19.55 Eps=0.795
-[DQN] Ep 258/2000 Reward=-18.00 Mean20=-19.40 Eps=0.794
-[DQN] Ep 259/2000 Reward=-21.00 Mean20=-19.45 Eps=0.793
-[DQN] Ep 260/2000 Reward=-20.00 Mean20=-19.50 Eps=0.793
-Saved latest checkpoint (episode 260) → Pong/checkpoints/last_model.pth
-[DQN] Ep 261/2000 Reward=-19.00 Mean20=-19.45 Eps=0.792
-[DQN] Ep 262/2000 Reward=-21.00 Mean20=-19.60 Eps=0.791
-[DQN] Ep 263/2000 Reward=-18.00 Mean20=-19.45 Eps=0.790
-[DQN] Ep 264/2000 Reward=-20.00 Mean20=-19.45 Eps=0.790
-[DQN] Ep 265/2000 Reward=-20.00 Mean20=-19.45 Eps=0.789
-[DQN] Ep 266/2000 Reward=-21.00 Mean20=-19.55 Eps=0.788
-[DQN] Ep 267/2000 Reward=-20.00 Mean20=-19.55 Eps=0.788
-[DQN] Ep 268/2000 Reward=-20.00 Mean20=-19.55 Eps=0.787
-[DQN] Ep 269/2000 Reward=-19.00 Mean20=-19.50 Eps=0.786
-[DQN] Ep 270/2000 Reward=-19.00 Mean20=-19.45 Eps=0.785
-Saved latest checkpoint (episode 270) → Pong/checkpoints/last_model.pth
-[DQN] Ep 271/2000 Reward=-19.00 Mean20=-19.45 Eps=0.785
-[DQN] Ep 272/2000 Reward=-20.00 Mean20=-19.55 Eps=0.784
-[DQN] Ep 273/2000 Reward=-16.00 Mean20=-19.45 Eps=0.783
-[DQN] Ep 274/2000 Reward=-16.00 Mean20=-19.30 Eps=0.782
-[DQN] Ep 275/2000 Reward=-20.00 Mean20=-19.30 Eps=0.781
-[DQN] Ep 276/2000 Reward=-20.00 Mean20=-19.30 Eps=0.780
-[DQN] Ep 277/2000 Reward=-21.00 Mean20=-19.40 Eps=0.779
-[DQN] Ep 278/2000 Reward=-20.00 Mean20=-19.50 Eps=0.779
-[DQN] Ep 279/2000 Reward=-20.00 Mean20=-19.45 Eps=0.778
-[DQN] Ep 280/2000 Reward=-18.00 Mean20=-19.35 Eps=0.777
-Saved latest checkpoint (episode 280) → Pong/checkpoints/last_model.pth
 New best model saved (mean(20)=-19.35) → Pong/checkpoints/best_model.pth
-[DQN] Ep 281/2000 Reward=-20.00 Mean20=-19.40 Eps=0.776
-[DQN] Ep 282/2000 Reward=-20.00 Mean20=-19.35 Eps=0.776
-[DQN] Ep 283/2000 Reward=-19.00 Mean20=-19.40 Eps=0.775
-[DQN] Ep 284/2000 Reward=-20.00 Mean20=-19.40 Eps=0.774
-[DQN] Ep 285/2000 Reward=-20.00 Mean20=-19.40 Eps=0.774
-[DQN] Ep 286/2000 Reward=-20.00 Mean20=-19.35 Eps=0.773
-[DQN] Ep 287/2000 Reward=-20.00 Mean20=-19.35 Eps=0.772
-[DQN] Ep 288/2000 Reward=-17.00 Mean20=-19.20 Eps=0.771
-[DQN] Ep 289/2000 Reward=-19.00 Mean20=-19.20 Eps=0.770
-[DQN] Ep 290/2000 Reward=-21.00 Mean20=-19.30 Eps=0.770
+[DQN] Ep 131/1000 Reward=-19.00 Mean20=-19.30 Eps=0.782
+[DQN] Ep 132/1000 Reward=-19.00 Mean20=-19.35 Eps=0.780
+[DQN] Ep 133/1000 Reward=-19.00 Mean20=-19.30 Eps=0.778
+[DQN] Ep 134/1000 Reward=-20.00 Mean20=-19.30 Eps=0.777
+[DQN] Ep 135/1000 Reward=-20.00 Mean20=-19.25 Eps=0.775
+[DQN] Ep 136/1000 Reward=-21.00 Mean20=-19.35 Eps=0.774
+[DQN] Ep 137/1000 Reward=-21.00 Mean20=-19.50 Eps=0.773
+[DQN] Ep 138/1000 Reward=-19.00 Mean20=-19.45 Eps=0.771
+[DQN] Ep 139/1000 Reward=-20.00 Mean20=-19.45 Eps=0.769
+[DQN] Ep 140/1000 Reward=-20.00 Mean20=-19.50 Eps=0.768
+Saved latest checkpoint (episode 140) → Pong/checkpoints/last_model.pth
+[DQN] Ep 141/1000 Reward=-19.00 Mean20=-19.40 Eps=0.766
+[DQN] Ep 142/1000 Reward=-19.00 Mean20=-19.30 Eps=0.765
+[DQN] Ep 143/1000 Reward=-18.00 Mean20=-19.30 Eps=0.763
+[DQN] Ep 144/1000 Reward=-21.00 Mean20=-19.35 Eps=0.761
+[DQN] Ep 145/1000 Reward=-18.00 Mean20=-19.25 Eps=0.760
+[DQN] Ep 146/1000 Reward=-21.00 Mean20=-19.35 Eps=0.759
+[DQN] Ep 147/1000 Reward=-21.00 Mean20=-19.45 Eps=0.757
+[DQN] Ep 148/1000 Reward=-21.00 Mean20=-19.50 Eps=0.756
+[DQN] Ep 149/1000 Reward=-20.00 Mean20=-19.65 Eps=0.754
+[DQN] Ep 150/1000 Reward=-19.00 Mean20=-19.75 Eps=0.753
+Saved latest checkpoint (episode 150) → Pong/checkpoints/last_model.pth
+[DQN] Ep 151/1000 Reward=-18.00 Mean20=-19.70 Eps=0.751
+[DQN] Ep 152/1000 Reward=-20.00 Mean20=-19.75 Eps=0.749
+[DQN] Ep 153/1000 Reward=-19.00 Mean20=-19.75 Eps=0.748
+[DQN] Ep 154/1000 Reward=-18.00 Mean20=-19.65 Eps=0.746
+[DQN] Ep 155/1000 Reward=-21.00 Mean20=-19.70 Eps=0.745
+[DQN] Ep 156/1000 Reward=-20.00 Mean20=-19.65 Eps=0.743
+[DQN] Ep 157/1000 Reward=-20.00 Mean20=-19.60 Eps=0.742
+[DQN] Ep 158/1000 Reward=-20.00 Mean20=-19.65 Eps=0.740
+[DQN] Ep 159/1000 Reward=-21.00 Mean20=-19.70 Eps=0.739
+[DQN] Ep 160/1000 Reward=-20.00 Mean20=-19.70 Eps=0.738
+Saved latest checkpoint (episode 160) → Pong/checkpoints/last_model.pth
+[DQN] Ep 161/1000 Reward=-20.00 Mean20=-19.75 Eps=0.736
+[DQN] Ep 162/1000 Reward=-20.00 Mean20=-19.80 Eps=0.734
+[DQN] Ep 163/1000 Reward=-20.00 Mean20=-19.90 Eps=0.733
+[DQN] Ep 164/1000 Reward=-20.00 Mean20=-19.85 Eps=0.732
+[DQN] Ep 165/1000 Reward=-20.00 Mean20=-19.95 Eps=0.730
+[DQN] Ep 166/1000 Reward=-20.00 Mean20=-19.90 Eps=0.729
+[DQN] Ep 167/1000 Reward=-20.00 Mean20=-19.85 Eps=0.728
+[DQN] Ep 168/1000 Reward=-18.00 Mean20=-19.70 Eps=0.726
+[DQN] Ep 169/1000 Reward=-21.00 Mean20=-19.75 Eps=0.724
+[DQN] Ep 170/1000 Reward=-17.00 Mean20=-19.65 Eps=0.722
+Saved latest checkpoint (episode 170) → Pong/checkpoints/last_model.pth
+[DQN] Ep 171/1000 Reward=-18.00 Mean20=-19.65 Eps=0.721
+[DQN] Ep 172/1000 Reward=-18.00 Mean20=-19.55 Eps=0.719
+[DQN] Ep 173/1000 Reward=-21.00 Mean20=-19.65 Eps=0.718
+[DQN] Ep 174/1000 Reward=-19.00 Mean20=-19.70 Eps=0.716
+[DQN] Ep 175/1000 Reward=-20.00 Mean20=-19.65 Eps=0.715
+[DQN] Ep 176/1000 Reward=-16.00 Mean20=-19.45 Eps=0.712
+[DQN] Ep 177/1000 Reward=-20.00 Mean20=-19.45 Eps=0.711
+[DQN] Ep 178/1000 Reward=-20.00 Mean20=-19.45 Eps=0.710
+[DQN] Ep 179/1000 Reward=-18.00 Mean20=-19.30 Eps=0.708
+[DQN] Ep 180/1000 Reward=-17.00 Mean20=-19.15 Eps=0.706
+Saved latest checkpoint (episode 180) → Pong/checkpoints/last_model.pth
+New best model saved (mean(20)=-19.15) → Pong/checkpoints/best_model.pth
+[DQN] Ep 181/1000 Reward=-19.00 Mean20=-19.10 Eps=0.704
+[DQN] Ep 182/1000 Reward=-21.00 Mean20=-19.15 Eps=0.703
+[DQN] Ep 183/1000 Reward=-21.00 Mean20=-19.20 Eps=0.702
+[DQN] Ep 184/1000 Reward=-18.00 Mean20=-19.10 Eps=0.700
+[DQN] Ep 185/1000 Reward=-20.00 Mean20=-19.10 Eps=0.699
+[DQN] Ep 186/1000 Reward=-17.00 Mean20=-18.95 Eps=0.697
+[DQN] Ep 187/1000 Reward=-17.00 Mean20=-18.80 Eps=0.695
+[DQN] Ep 188/1000 Reward=-18.00 Mean20=-18.80 Eps=0.693
+[DQN] Ep 189/1000 Reward=-18.00 Mean20=-18.65 Eps=0.692
+[DQN] Ep 190/1000 Reward=-16.00 Mean20=-18.60 Eps=0.690
+Saved latest checkpoint (episode 190) → Pong/checkpoints/last_model.pth
+New best model saved (mean(20)=-18.60) → Pong/checkpoints/best_model.pth
+[DQN] Ep 191/1000 Reward=-21.00 Mean20=-18.75 Eps=0.688
+[DQN] Ep 192/1000 Reward=-18.00 Mean20=-18.75 Eps=0.686
+[DQN] Ep 193/1000 Reward=-20.00 Mean20=-18.70 Eps=0.685
+[DQN] Ep 194/1000 Reward=-21.00 Mean20=-18.80 Eps=0.683
+[DQN] Ep 195/1000 Reward=-20.00 Mean20=-18.80 Eps=0.682
+[DQN] Ep 196/1000 Reward=-17.00 Mean20=-18.85 Eps=0.680
+[DQN] Ep 197/1000 Reward=-20.00 Mean20=-18.85 Eps=0.679
+[DQN] Ep 198/1000 Reward=-16.00 Mean20=-18.65 Eps=0.677
+[DQN] Ep 199/1000 Reward=-18.00 Mean20=-18.65 Eps=0.676
+[DQN] Ep 200/1000 Reward=-19.00 Mean20=-18.75 Eps=0.674
+Saved latest checkpoint (episode 200) → Pong/checkpoints/last_model.pth
+[DQN] Ep 201/1000 Reward=-20.00 Mean20=-18.80 Eps=0.673
+[DQN] Ep 202/1000 Reward=-20.00 Mean20=-18.75 Eps=0.671
+[DQN] Ep 203/1000 Reward=-20.00 Mean20=-18.70 Eps=0.670
+[DQN] Ep 204/1000 Reward=-19.00 Mean20=-18.75 Eps=0.668
+[DQN] Ep 205/1000 Reward=-18.00 Mean20=-18.65 Eps=0.667
+[DQN] Ep 206/1000 Reward=-19.00 Mean20=-18.75 Eps=0.665
+[DQN] Ep 207/1000 Reward=-16.00 Mean20=-18.70 Eps=0.663
+[DQN] Ep 208/1000 Reward=-18.00 Mean20=-18.70 Eps=0.662
+[DQN] Ep 209/1000 Reward=-19.00 Mean20=-18.75 Eps=0.660
+[DQN] Ep 210/1000 Reward=-21.00 Mean20=-19.00 Eps=0.659
+Saved latest checkpoint (episode 210) → Pong/checkpoints/last_model.pth
+[DQN] Ep 211/1000 Reward=-20.00 Mean20=-18.95 Eps=0.657
+[DQN] Ep 212/1000 Reward=-19.00 Mean20=-19.00 Eps=0.656
+[DQN] Ep 213/1000 Reward=-18.00 Mean20=-18.90 Eps=0.654
+[DQN] Ep 214/1000 Reward=-18.00 Mean20=-18.75 Eps=0.652
+[DQN] Ep 215/1000 Reward=-19.00 Mean20=-18.70 Eps=0.651
+[DQN] Ep 216/1000 Reward=-19.00 Mean20=-18.80 Eps=0.649
+[DQN] Ep 217/1000 Reward=-18.00 Mean20=-18.70 Eps=0.648
+[DQN] Ep 218/1000 Reward=-19.00 Mean20=-18.85 Eps=0.646
+[DQN] Ep 219/1000 Reward=-15.00 Mean20=-18.70 Eps=0.644
+[DQN] Ep 220/1000 Reward=-16.00 Mean20=-18.55 Eps=0.643
+Saved latest checkpoint (episode 220) → Pong/checkpoints/last_model.pth
+New best model saved (mean(20)=-18.55) → Pong/checkpoints/best_model.pth
+[DQN] Ep 221/1000 Reward=-20.00 Mean20=-18.55 Eps=0.641
+[DQN] Ep 222/1000 Reward=-19.00 Mean20=-18.50 Eps=0.639
+[DQN] Ep 223/1000 Reward=-20.00 Mean20=-18.50 Eps=0.638
+[DQN] Ep 224/1000 Reward=-18.00 Mean20=-18.45 Eps=0.636
+[DQN] Ep 225/1000 Reward=-18.00 Mean20=-18.45 Eps=0.634
+[DQN] Ep 226/1000 Reward=-17.00 Mean20=-18.35 Eps=0.633
+[DQN] Ep 227/1000 Reward=-17.00 Mean20=-18.40 Eps=0.631
+[DQN] Ep 228/1000 Reward=-20.00 Mean20=-18.50 Eps=0.630
+[DQN] Ep 229/1000 Reward=-18.00 Mean20=-18.45 Eps=0.628
+[DQN] Ep 230/1000 Reward=-18.00 Mean20=-18.30 Eps=0.626
+Saved latest checkpoint (episode 230) → Pong/checkpoints/last_model.pth
+New best model saved (mean(20)=-18.30) → Pong/checkpoints/best_model.pth
+[DQN] Ep 231/1000 Reward=-18.00 Mean20=-18.20 Eps=0.625
+[DQN] Ep 232/1000 Reward=-21.00 Mean20=-18.30 Eps=0.623
+[DQN] Ep 233/1000 Reward=-21.00 Mean20=-18.45 Eps=0.622
+[DQN] Ep 234/1000 Reward=-20.00 Mean20=-18.55 Eps=0.621
+[DQN] Ep 235/1000 Reward=-19.00 Mean20=-18.55 Eps=0.620
+[DQN] Ep 236/1000 Reward=-19.00 Mean20=-18.55 Eps=0.618
+[DQN] Ep 237/1000 Reward=-17.00 Mean20=-18.50 Eps=0.616
+[DQN] Ep 238/1000 Reward=-19.00 Mean20=-18.50 Eps=0.615
+[DQN] Ep 239/1000 Reward=-19.00 Mean20=-18.70 Eps=0.614
+[DQN] Ep 240/1000 Reward=-20.00 Mean20=-18.90 Eps=0.612
+Saved latest checkpoint (episode 240) → Pong/checkpoints/last_model.pth
+[DQN] Ep 241/1000 Reward=-20.00 Mean20=-18.90 Eps=0.611
+[DQN] Ep 242/1000 Reward=-20.00 Mean20=-18.95 Eps=0.610
+[DQN] Ep 243/1000 Reward=-18.00 Mean20=-18.85 Eps=0.608
+[DQN] Ep 244/1000 Reward=-19.00 Mean20=-18.90 Eps=0.607
+[DQN] Ep 245/1000 Reward=-21.00 Mean20=-19.05 Eps=0.606
+[DQN] Ep 246/1000 Reward=-21.00 Mean20=-19.25 Eps=0.605
+[DQN] Ep 247/1000 Reward=-21.00 Mean20=-19.45 Eps=0.603
+[DQN] Ep 248/1000 Reward=-19.00 Mean20=-19.40 Eps=0.602
+[DQN] Ep 249/1000 Reward=-18.00 Mean20=-19.40 Eps=0.600
+[DQN] Ep 250/1000 Reward=-16.00 Mean20=-19.30 Eps=0.598
+Saved latest checkpoint (episode 250) → Pong/checkpoints/last_model.pth
+[DQN] Ep 251/1000 Reward=-20.00 Mean20=-19.40 Eps=0.597
+[DQN] Ep 252/1000 Reward=-19.00 Mean20=-19.30 Eps=0.596
+[DQN] Ep 253/1000 Reward=-17.00 Mean20=-19.10 Eps=0.594
+[DQN] Ep 254/1000 Reward=-20.00 Mean20=-19.10 Eps=0.593
+[DQN] Ep 255/1000 Reward=-16.00 Mean20=-18.95 Eps=0.591
+[DQN] Ep 256/1000 Reward=-19.00 Mean20=-18.95 Eps=0.590
+[DQN] Ep 257/1000 Reward=-20.00 Mean20=-19.10 Eps=0.589
+[DQN] Ep 258/1000 Reward=-20.00 Mean20=-19.15 Eps=0.588
+[DQN] Ep 259/1000 Reward=-18.00 Mean20=-19.10 Eps=0.586
+[DQN] Ep 260/1000 Reward=-19.00 Mean20=-19.05 Eps=0.585
+Saved latest checkpoint (episode 260) → Pong/checkpoints/last_model.pth
+[DQN] Ep 261/1000 Reward=-19.00 Mean20=-19.00 Eps=0.584
+[DQN] Ep 262/1000 Reward=-18.00 Mean20=-18.90 Eps=0.582
+[DQN] Ep 263/1000 Reward=-21.00 Mean20=-19.05 Eps=0.581
+[DQN] Ep 264/1000 Reward=-19.00 Mean20=-19.05 Eps=0.580
+[DQN] Ep 265/1000 Reward=-19.00 Mean20=-18.95 Eps=0.578
+[DQN] Ep 266/1000 Reward=-20.00 Mean20=-18.90 Eps=0.577
+[DQN] Ep 267/1000 Reward=-19.00 Mean20=-18.80 Eps=0.576
+[DQN] Ep 268/1000 Reward=-18.00 Mean20=-18.75 Eps=0.574
+[DQN] Ep 269/1000 Reward=-18.00 Mean20=-18.75 Eps=0.572
+[DQN] Ep 270/1000 Reward=-18.00 Mean20=-18.85 Eps=0.571
+Saved latest checkpoint (episode 270) → Pong/checkpoints/last_model.pth
+[DQN] Ep 271/1000 Reward=-17.00 Mean20=-18.70 Eps=0.569
+[DQN] Ep 272/1000 Reward=-19.00 Mean20=-18.70 Eps=0.568
+[DQN] Ep 273/1000 Reward=-19.00 Mean20=-18.80 Eps=0.567
+[DQN] Ep 274/1000 Reward=-19.00 Mean20=-18.75 Eps=0.566
+[DQN] Ep 275/1000 Reward=-18.00 Mean20=-18.85 Eps=0.564
+[DQN] Ep 276/1000 Reward=-19.00 Mean20=-18.85 Eps=0.563
+[DQN] Ep 277/1000 Reward=-19.00 Mean20=-18.80 Eps=0.562
+[DQN] Ep 278/1000 Reward=-19.00 Mean20=-18.75 Eps=0.561
+[DQN] Ep 279/1000 Reward=-18.00 Mean20=-18.75 Eps=0.560
+[DQN] Ep 280/1000 Reward=-21.00 Mean20=-18.85 Eps=0.559
+Saved latest checkpoint (episode 280) → Pong/checkpoints/last_model.pth
+[DQN] Ep 281/1000 Reward=-14.00 Mean20=-18.60 Eps=0.557
+[DQN] Ep 282/1000 Reward=-18.00 Mean20=-18.60 Eps=0.555
+[DQN] Ep 283/1000 Reward=-17.00 Mean20=-18.40 Eps=0.554
+[DQN] Ep 284/1000 Reward=-20.00 Mean20=-18.45 Eps=0.553
+[DQN] Ep 285/1000 Reward=-18.00 Mean20=-18.40 Eps=0.551
+[DQN] Ep 286/1000 Reward=-20.00 Mean20=-18.40 Eps=0.550
+[DQN] Ep 287/1000 Reward=-18.00 Mean20=-18.35 Eps=0.549
+[DQN] Ep 288/1000 Reward=-16.00 Mean20=-18.25 Eps=0.547
+[DQN] Ep 289/1000 Reward=-20.00 Mean20=-18.35 Eps=0.546
+[DQN] Ep 290/1000 Reward=-17.00 Mean20=-18.30 Eps=0.544
 Saved latest checkpoint (episode 290) → Pong/checkpoints/last_model.pth
-New best model saved (mean(20)=-19.30) → Pong/checkpoints/best_model.pth
-[DQN] Ep 291/2000 Reward=-19.00 Mean20=-19.30 Eps=0.769
-[DQN] Ep 292/2000 Reward=-18.00 Mean20=-19.20 Eps=0.768
-[DQN] Ep 293/2000 Reward=-18.00 Mean20=-19.30 Eps=0.767
-[DQN] Ep 294/2000 Reward=-18.00 Mean20=-19.40 Eps=0.766
-[DQN] Ep 295/2000 Reward=-20.00 Mean20=-19.40 Eps=0.766
-[DQN] Ep 296/2000 Reward=-21.00 Mean20=-19.45 Eps=0.765
-[DQN] Ep 297/2000 Reward=-20.00 Mean20=-19.40 Eps=0.764
-[DQN] Ep 298/2000 Reward=-19.00 Mean20=-19.35 Eps=0.763
-[DQN] Ep 299/2000 Reward=-20.00 Mean20=-19.35 Eps=0.763
-[DQN] Ep 300/2000 Reward=-16.00 Mean20=-19.25 Eps=0.762
+[DQN] Ep 291/1000 Reward=-16.00 Mean20=-18.25 Eps=0.543
+[DQN] Ep 292/1000 Reward=-19.00 Mean20=-18.25 Eps=0.541
+[DQN] Ep 293/1000 Reward=-15.00 Mean20=-18.05 Eps=0.540
+[DQN] Ep 294/1000 Reward=-17.00 Mean20=-17.95 Eps=0.538
+[DQN] Ep 295/1000 Reward=-19.00 Mean20=-18.00 Eps=0.537
+[DQN] Ep 296/1000 Reward=-20.00 Mean20=-18.05 Eps=0.536
+[DQN] Ep 297/1000 Reward=-19.00 Mean20=-18.05 Eps=0.535
+[DQN] Ep 298/1000 Reward=-17.00 Mean20=-17.95 Eps=0.533
+[DQN] Ep 299/1000 Reward=-18.00 Mean20=-17.95 Eps=0.532
+[DQN] Ep 300/1000 Reward=-19.00 Mean20=-17.85 Eps=0.531
 Saved latest checkpoint (episode 300) → Pong/checkpoints/last_model.pth
-New best model saved (mean(20)=-19.25) → Pong/checkpoints/best_model.pth
-[DQN] Ep 301/2000 Reward=-20.00 Mean20=-19.25 Eps=0.761
-[DQN] Ep 302/2000 Reward=-21.00 Mean20=-19.30 Eps=0.761
-[DQN] Ep 303/2000 Reward=-18.00 Mean20=-19.25 Eps=0.760
-[DQN] Ep 304/2000 Reward=-21.00 Mean20=-19.30 Eps=0.759
-[DQN] Ep 305/2000 Reward=-16.00 Mean20=-19.10 Eps=0.758
-[DQN] Ep 306/2000 Reward=-18.00 Mean20=-19.00 Eps=0.757
-[DQN] Ep 307/2000 Reward=-19.00 Mean20=-18.95 Eps=0.756
-[DQN] Ep 308/2000 Reward=-20.00 Mean20=-19.10 Eps=0.756
-[DQN] Ep 309/2000 Reward=-21.00 Mean20=-19.20 Eps=0.755
-[DQN] Ep 310/2000 Reward=-18.00 Mean20=-19.05 Eps=0.754
-Saved latest checkpoint (episode 310) → Pong/checkpoints/last_model.pth
-New best model saved (mean(20)=-19.05) → Pong/checkpoints/best_model.pth
-[DQN] Ep 311/2000 Reward=-19.00 Mean20=-19.05 Eps=0.753
-[DQN] Ep 312/2000 Reward=-21.00 Mean20=-19.20 Eps=0.753
-[DQN] Ep 313/2000 Reward=-18.00 Mean20=-19.20 Eps=0.752
-[DQN] Ep 314/2000 Reward=-20.00 Mean20=-19.30 Eps=0.751
-[DQN] Ep 315/2000 Reward=-20.00 Mean20=-19.30 Eps=0.751
-[DQN] Ep 316/2000 Reward=-16.00 Mean20=-19.05 Eps=0.750
-[DQN] Ep 317/2000 Reward=-19.00 Mean20=-19.00 Eps=0.749
-[DQN] Ep 318/2000 Reward=-21.00 Mean20=-19.10 Eps=0.748
-[DQN] Ep 319/2000 Reward=-18.00 Mean20=-19.00 Eps=0.748
-[DQN] Ep 320/2000 Reward=-19.00 Mean20=-19.15 Eps=0.747
-Saved latest checkpoint (episode 320) → Pong/checkpoints/last_model.pth
-[DQN] Ep 321/2000 Reward=-20.00 Mean20=-19.15 Eps=0.746
-[DQN] Ep 322/2000 Reward=-19.00 Mean20=-19.05 Eps=0.745
-[DQN] Ep 323/2000 Reward=-20.00 Mean20=-19.15 Eps=0.745
-[DQN] Ep 324/2000 Reward=-18.00 Mean20=-19.00 Eps=0.744
-[DQN] Ep 325/2000 Reward=-20.00 Mean20=-19.20 Eps=0.743
-[DQN] Ep 326/2000 Reward=-18.00 Mean20=-19.20 Eps=0.742
-[DQN] Ep 327/2000 Reward=-21.00 Mean20=-19.30 Eps=0.742
-[DQN] Ep 328/2000 Reward=-21.00 Mean20=-19.35 Eps=0.741
-[DQN] Ep 329/2000 Reward=-20.00 Mean20=-19.30 Eps=0.740
-[DQN] Ep 330/2000 Reward=-18.00 Mean20=-19.30 Eps=0.739
-Saved latest checkpoint (episode 330) → Pong/checkpoints/last_model.pth
-[DQN] Ep 331/2000 Reward=-20.00 Mean20=-19.35 Eps=0.739
-[DQN] Ep 332/2000 Reward=-21.00 Mean20=-19.35 Eps=0.738
-[DQN] Ep 333/2000 Reward=-18.00 Mean20=-19.35 Eps=0.737
-[DQN] Ep 334/2000 Reward=-20.00 Mean20=-19.35 Eps=0.736
-[DQN] Ep 335/2000 Reward=-19.00 Mean20=-19.30 Eps=0.736
-[DQN] Ep 336/2000 Reward=-20.00 Mean20=-19.50 Eps=0.735
-[DQN] Ep 337/2000 Reward=-20.00 Mean20=-19.55 Eps=0.734
-[DQN] Ep 338/2000 Reward=-17.00 Mean20=-19.35 Eps=0.733
-[DQN] Ep 339/2000 Reward=-17.00 Mean20=-19.30 Eps=0.733
-[DQN] Ep 340/2000 Reward=-18.00 Mean20=-19.25 Eps=0.732
-Saved latest checkpoint (episode 340) → Pong/checkpoints/last_model.pth
-Traceback (most recent call last):
-  File "/home/azureuser/DeepRL/main.py", line 613, in <module>
-    main()
-  File "/home/azureuser/DeepRL/main.py", line 580, in main
-    dqn_train(
-  File "/home/azureuser/DeepRL/main.py", line 296, in dqn_train
-    optimizer.step()
-  File "/home/azureuser/venv/lib/python3.10/site-packages/torch/optim/optimizer.py", line 517, in wrapper
-    out = func(*args, **kwargs)
-  File "/home/azureuser/venv/lib/python3.10/site-packages/torch/optim/optimizer.py", line 82, in _use_grad
-    ret = func(*args, **kwargs)
-  File "/home/azureuser/venv/lib/python3.10/site-packages/torch/optim/adam.py", line 247, in step
-    adam(
-  File "/home/azureuser/venv/lib/python3.10/site-packages/torch/optim/optimizer.py", line 150, in maybe_fallback
-    return func(*args, **kwargs)
-  File "/home/azureuser/venv/lib/python3.10/site-packages/torch/optim/adam.py", line 953, in adam
-    func(
-  File "/home/azureuser/venv/lib/python3.10/site-packages/torch/optim/adam.py", line 535, in _single_tensor_adam
-    denom = (exp_avg_sq.sqrt() / bias_correction2_sqrt).add_(eps)
-KeyboardInterrupt
+New best model saved (mean(20)=-17.85) → Pong/checkpoints/best_model.pth
+[DQN] Ep 301/1000 Reward=-16.00 Mean20=-17.95 Eps=0.529
+[DQN] Ep 302/1000 Reward=-18.00 Mean20=-17.95 Eps=0.528
+[DQN] Ep 303/1000 Reward=-19.00 Mean20=-18.05 Eps=0.527
+[DQN] Ep 304/1000 Reward=-18.00 Mean20=-17.95 Eps=0.525
+[DQN] Ep 305/1000 Reward=-19.00 Mean20=-18.00 Eps=0.524
+[DQN] Ep 306/1000 Reward=-19.00 Mean20=-17.95 Eps=0.523
+[DQN] Ep 307/1000 Reward=-13.00 Mean20=-17.70 Eps=0.521
+[DQN] Ep 308/1000 Reward=-19.00 Mean20=-17.85 Eps=0.520
+[DQN] Ep 309/1000 Reward=-17.00 Mean20=-17.70 Eps=0.519

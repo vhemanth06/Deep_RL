@@ -113,7 +113,7 @@ class DQN_MLP(nn.Module):
 
 
 def preprocess_pong(obs):
-    obs = obs[35:195] 
+    # obs = obs[35:195] 
     obs = cv2.cvtColor(obs, cv2.COLOR_RGB2GRAY)
     obs = cv2.resize(obs, (84, 84), interpolation=cv2.INTER_AREA)
     return obs.astype(np.float32) / 255.0
