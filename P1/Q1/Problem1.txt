@@ -1,0 +1,27 @@
+MountainCar-v0
+Observation space: Box([-1.2  -0.07], [0.6  0.07], (2,), float32)
+Action space: Discrete(3)
+Random policy episode 1: reward = -200.0
+Random policy episode 2: reward = -200.0
+Random policy episode 3: reward = -200.0
+Random policy episode 4: reward = -200.0
+Random policy episode 5: reward = -200.0
+Random policy episode 6: reward = -200.0
+Random policy episode 7: reward = -200.0
+Random policy episode 8: reward = -200.0
+Random policy episode 9: reward = -200.0
+Random policy episode 10: reward = -200.0
+
+ALE/Pong-v5
+Observation space: Box(0, 255, (210, 160, 3), uint8)
+Action space: Discrete(6)
+Random policy episode 1: reward = -11.0
+Random policy episode 2: reward = -10.0
+Random policy episode 3: reward = -11.0
+Random policy episode 4: reward = -10.0
+Random policy episode 5: reward = -11.0
+Random policy episode 6: reward = -13.0
+Random policy episode 7: reward = -10.0
+Random policy episode 8: reward = -12.0
+Random policy episode 9: reward = -13.0
+Random policy episode 10: reward = -11.0

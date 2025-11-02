@@ -192,7 +192,7 @@ def dqntrain(envname,  num_episodes):
 
         if (episode + 1) % checkpoint == 0:
             agent.savecheckpoint(episode , total_steps)
-        print(f"Episode {episode + 1}, Reward: {episode_reward}, Steps: {step}, Epsilon: {agent.epsilon:.4f}")
+        print(f"[DQN] Ep {episode + 1}/{num_episodes} Reward={episode_reward:.2f} Eps={agent.epsilon:.3f}")
 
     agent.savecheckpoint(episode - 1, total_steps)
     env.close()

@@ -14,8 +14,9 @@ import torch.nn as nn
 import torch.optim as optim
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
+gym.register_envs(ale_py)
 
-GAMEDIR = "Pong"
+GAMEDIR = "P1/Q3/"
 LOG_DIR = f"{GAMEDIR}/logs"
 PLOTS_DIR = f"{GAMEDIR}/plots"
 CKPT_DIR = f"{GAMEDIR}/checkpoints"
@@ -128,12 +129,12 @@ def save_checkpoint(policy_net, target_net, optimizer, episode, total_steps, ret
     }
 
     torch.save(ckpt, last_path)
-    print(f"Saved latest checkpoint (episode {episode}) → {last_path}")
+    print(f"Saved latest checkpoint (episode {episode}) - {last_path}")
 
     current_mean = np.mean(returns[-20:]) if len(returns) >= 20 else returns[-1]
     if current_mean > best_mean:
         torch.save(ckpt, best_path)
-        print(f"New best model saved (mean(20)={current_mean:.2f}) → {best_path}")
+        print(f"New best model saved (mean(20)={current_mean:.2f}) - {best_path}")
         best_mean = current_mean
 
     return best_mean
@@ -182,7 +183,7 @@ def dqn_train(env_name="ALE/Pong-v5",
     env = gym.make(env_name, render_mode=("human" if render else None))
     n_actions = env.action_space.n
 
-    is_pixel = len(env.observation_space.shape) == 3  # Pong
+    is_pixel = len(env.observation_space.shape) == 3 
     if is_pixel:
         policy_net = DQN_CNN((4,84,84), n_actions).to(device)
         target_net = DQN_CNN((4,84,84), n_actions).to(device)
@@ -195,16 +196,7 @@ def dqn_train(env_name="ALE/Pong-v5",
     optimizer = optim.Adam(policy_net.parameters(), lr=lr)
     buffer = ReplayBuffer(buffer_capacity)
 
-    # resume
-    # start_episode = 0
-    # total_steps = 0
-    # returns = []
-    # if use_resume:
-    #     ckpt = latest_checkpoint()
-    #     if ckpt:
-    #         start_episode, total_steps, returns = load_checkpoint(ckpt, policy_net, target_net, optimizer)
 
-    # best_mean = -float("inf")
     start_episode = 0
     total_steps = 0
     returns = []
@@ -232,13 +224,12 @@ def dqn_train(env_name="ALE/Pong-v5",
     last_path = os.path.join(CKPT_DIR, "last_model.pth")
 
     for ep in range(start_episode, total_episodes):
-        # reset
         obs, info = env.reset()
         if is_pixel:
             last = preprocess_pong(obs)
-            state_stack = np.stack([last]*4, axis=0)  # 4x84x84
+            state_stack = np.stack([last]*4, axis=0)  
         else:
-            state_stack = np.array(obs, dtype=np.float32)  # state vector
+            state_stack = np.array(obs, dtype=np.float32)  
 
         done = False
         total_reward = 0
@@ -248,7 +239,6 @@ def dqn_train(env_name="ALE/Pong-v5",
 
         while True:
             epsilon = epsilon_end + (epsilon_start - epsilon_end) * np.exp(-total_steps / epsilon_decay)
-            # select action
             if random.random() < epsilon:
                 action = env.action_space.sample()
             else:
@@ -268,8 +258,6 @@ def dqn_train(env_name="ALE/Pong-v5",
             total_steps += 1
             step += 1
             reward_timestep.append(reward)
-            # print(f"Episode: {ep+1}, Step: {step}, Action: {action}, Reward: {reward}, Total Reward: {total_reward}, Epsilon: {epsilon:.3f}")
-
             if is_pixel:
                 next_pre = preprocess_pong(next_obs)
                 frame_diff = next_pre - last
@@ -283,7 +271,7 @@ def dqn_train(env_name="ALE/Pong-v5",
                 buffer.push(state_stack, action, reward, next_state, float(done_flag))
                 state_stack = next_state
 
-            # learn
+  
             if len(buffer) > min_buffer_size:
                 states, actions, rewards, next_states, dones = buffer.sample(batch_size)
                 curr_q = policy_net(states).gather(1, actions.unsqueeze(1)).squeeze()
@@ -304,53 +292,23 @@ def dqn_train(env_name="ALE/Pong-v5",
         mean20 = np.mean(returns[-20:]) if len(returns) >= 1 else total_reward
         print(f"[DQN] Ep {ep+1}/{total_episodes} Reward={total_reward:.2f} Mean20={mean20:.2f} Eps={epsilon:.3f}")
 
-        # save checkpoints
-        # if (ep + 1) % 10 == 0:
-        #     ckpt_path = f"checkpoints/dqn_{env_name.replace('/', '_')}_ep{ep+1}.pth"
-        #     save_checkpoint(policy_net, target_net, optimizer, ep+1, total_steps, returns, ckpt_path)
-
-        # # save best
-        # if mean20 > best_mean:
-        #     best_mean = mean20
-        #     save_checkpoint(policy_net, target_net, optimizer, ep+1, total_steps, returns, os.path.join(CKPT_DIR, "dqn_best.pth"))
         if (ep + 1) % 10 == 0:
             best_mean = save_checkpoint(policy_net, target_net, optimizer,
                                   ep + 1, total_steps, returns,
                                   best_mean, best_path, last_path)
     env.close()
 
-    # plot mean(20) vs episodes (x scaled to episodes)
-    # mean_returns = [np.mean(returns[max(0,i-19):i+1]) for i in range(len(returns))]
-    # plt.figure()
-    # plt.plot(mean_returns, label="mean(20)")
-    # plt.plot(prefix_max(returns), label="best means",color='red')
-    # plt.title(f"DQN on {env_name}")
-    # plt.xlabel("Episode")
-    # plt.ylabel("Mean return (20)")
-    # plt.legend()
-    # plot_path = os.path.join(PLOTS_DIR, f"dqn_{env_name.replace('/', '_')}_{timestamp()}.png")
-    # plt.savefig(plot_path)
-    # plt.close()
-    # print(f"Saved plot: {plot_path}")
-    n = 20  # averaging window
-    episode_rewards = returns  # same thing, for clarity
-    steps_per_episode = []  # collect steps taken per episode
+    n = 20
+    episode_rewards = returns 
+    steps_per_episode = []  
     total_steps_count = 0
 
-    # We can estimate average steps/episode by dividing total_steps
-    # but since you didn't store step count per ep, let's track it inline
-    # (If step is tracked in loop, replace this loop with recorded data)
-    # For now, assume each episode took roughly same number of steps as last:
-    # better accuracy: store `step` each ep in steps_per_episode inside loop above
-    # steps_per_episode.append(step)
-    # if you didn’t store yet, estimate below:
-    # steps_per_episode = [len(episode_rewards) * 0 + 200] * len(episode_rewards) 
+  
     if is_pixel:
 
       steps_per_episode = [ 2000] * len(episode_rewards)
     else :
       steps_per_episode = [ 200] * len(episode_rewards)
-    # NOTE: if you have `step` in loop, delete above line and append step each episode
 
     timesteps = []
     mean_rewards = []
@@ -370,22 +328,19 @@ def dqn_train(env_name="ALE/Pong-v5",
         best_so_far = max(best_so_far, mean_val)
         best_means.append(best_so_far)
 
-    # --- Plot Mean(20) Reward vs Timesteps ---
     plt.figure()
     plt.plot(timesteps, mean_rewards, label=f"Mean({n}) Reward", color="blue")
     plt.plot(timesteps, best_means, label="Best Mean", color="red", linestyle="--")
     plt.xlabel("Timesteps")
     plt.ylabel(f"Mean {n}-Episode Reward")
-    plt.title(f"DQN Training Progress ({env_name})")
+    plt.title(f"DQN Training Progress ({env_name}) lr-{lr}")
     plt.grid(True)
     plt.legend()
     plot_path = os.path.join(PLOTS_DIR, f"dqn_{env_name.replace('/', '_')}_{timestamp()}.png")
     plt.savefig(plot_path)
 
-    # If MountainCar, create action map plot
-    if ("MountainCar" in env_name) or ("MountainCar-v0" in env_name):
-        # action space {0,1,2}, state = [pos, vel]
-        print("Generating action-choice heatmap for MountainCar")
+    if (env_name == "MountainCar-v0"):
+        print(f"Generating action-choice heatmap for MountainCar ")
         policy_net.eval()
         pos_vals = np.linspace(-1.2, 0.6, 200)
         vel_vals = np.linspace(-0.07, 0.07, 200)
@@ -400,7 +355,7 @@ def dqn_train(env_name="ALE/Pong-v5",
         plt.figure(figsize=(6,5))
         plt.imshow(action_map, origin="lower", extent=[pos_vals.min(), pos_vals.max(), vel_vals.min(), vel_vals.max()], aspect='auto')
         plt.colorbar(ticks=[0,1,2], label='action')
-        plt.title("MountainCar policy action map (velocity vs position)")
+        plt.title(f"MountainCar policy action map (velocity vs position) lr-{lr}")
         plt.xlabel("Position")
         plt.ylabel("Velocity")
         heatmap_path = os.path.join(PLOTS_DIR, f"mountaincar_actionmap_{timestamp()}.png")
@@ -416,34 +371,34 @@ def dqn_sweep(env_name, param_name, param_values, base_kwargs):
     for val in param_values:
         kwargs = base_kwargs.copy()
         kwargs[param_name] = val
-        print(f"Running sweep: {param_name}={val}")
-        returns = dqn_train(env_name=env_name, total_episodes=kwargs.get("total_episodes", 50),
-                            batch_size=kwargs.get("batch_size", 32),
+        print(f"Running {param_name}={val}")
+        returns = dqn_train(env_name=env_name, total_episodes=kwargs.get("total_episodes", 1500),
+                            batch_size=kwargs.get("batch_size", 64),
                             gamma=kwargs.get("gamma", 0.99),
-                            lr=kwargs.get("lr", 1e-4),
-                            buffer_capacity=kwargs.get("buffer_capacity", 100000),
-                            min_buffer_size=kwargs.get("min_buffer_size", 5000),
-                            target_update_steps=kwargs.get("target_update_steps", 1000),
+                            lr=kwargs.get("lr", 5e-4),
+                            buffer_capacity=kwargs.get("buffer_capacity", 50000),
+                            min_buffer_size=kwargs.get("min_buffer_size", 1000),
+                            target_update_steps=kwargs.get("target_update_steps", 500),
                             epsilon_start=kwargs.get("epsilon_start", 1.0),
-                            epsilon_end=kwargs.get("epsilon_end", 0.1),
-                            epsilon_decay=kwargs.get("epsilon_decay", 50000),
+                            epsilon_end=kwargs.get("epsilon_end", 0.05),
+                            epsilon_decay=kwargs.get("epsilon_decay", 20000),
                             render=kwargs.get("render", False),
-                            save_every=kwargs.get("save_every", 1000),
+                            save_every=kwargs.get("save_every", 10),
                             use_resume=False)
         results[val] = [np.mean(returns[max(0,i-19):i+1]) for i in range(len(returns))]
 
-    # plot
+
     plt.figure()
     for val, curve in results.items():
         plt.plot(curve, label=f"{param_name}={val}")
-    plt.title(f"DQN sweep {param_name} on {env_name}")
+    plt.title(f"DQN parameter tuning: {param_name} on {env_name}")
     plt.xlabel("Episode")
     plt.ylabel("Mean return (20)")
     plt.legend()
-    fname = os.path.join(PLOTS_DIR, f"dqn_sweep_{param_name}_{timestamp()}.png")
+    fname = os.path.join(PLOTS_DIR, f"dqn_HT_{param_name}_{timestamp()}.png")
     plt.savefig(fname)
     plt.close()
-    print(f"Saved sweep plot: {fname}")
+    print(f"Saved hyperparameter tuning plot: {fname}")
 
 
 class PolicyMLP(nn.Module):
@@ -474,78 +429,6 @@ def compute_returns(rewards, gamma=0.99, reward_to_go=False):
             pw *= gamma
         return np.array([G for _ in rewards], dtype=np.float32)
 
-# def pg_train(env_name="CartPole-v0", iterations=50, batch_size=5000, lr=1e-2, gamma=0.99,
-#              reward_to_go=False, adv_norm=False, render=False):
-#     print(f"PG training on {env_name} | reward_to_go={reward_to_go} adv_norm={adv_norm}")
-#     env = gym.make(env_name, render_mode=("human" if render else None))
-#     state_dim = env.observation_space.shape[0]
-#     n_actions = env.action_space.n
-#     policy = PolicyMLP(state_dim, n_actions).to(device)
-#     optimizer = optim.Adam(policy.parameters(), lr=lr)
-#     all_mean_rewards = []
-
-#     for it in range(iterations):
-#         batch_states, batch_actions, batch_weights, batch_episode_rewards = [], [], [], []
-#         steps = 0
-#         # collect trajectories until steps >= batch_size
-#         while steps < batch_size:
-#             obs, info = env.reset()
-#             done = False
-#             states, actions, rewards = [], [], []
-#             while True:
-#                 s_t = torch.tensor(obs, dtype=torch.float32, device=device).unsqueeze(0)
-#                 logits = policy(s_t)
-#                 dist = torch.distributions.Categorical(logits=logits)
-#                 action = int(dist.sample().item())
-#                 next_obs, reward, terminated, truncated, info = env.step(action)
-#                 done_flag = terminated or truncated
-#                 states.append(obs)
-#                 actions.append(action)
-#                 rewards.append(reward)
-#                 obs = next_obs
-#                 if done_flag:
-#                     break
-#             steps += len(states)
-#             batch_states += states
-#             batch_actions += actions
-#             batch_episode_rewards.append(sum(rewards))
-#             batch_weights += list(compute_returns(rewards, gamma, reward_to_go))
-
-#         batch_states_t = torch.tensor(np.array(batch_states), dtype=torch.float32, device=device)
-#         batch_actions_t = torch.tensor(batch_actions, dtype=torch.int64, device=device)
-#         batch_weights_t = torch.tensor(batch_weights, dtype=torch.float32, device=device)
-
-#         # advantage normalization
-#         if adv_norm:
-#             mean = batch_weights_t.mean()
-#             std = batch_weights_t.std() + 1e-8
-#             batch_weights_t = (batch_weights_t - mean) / std
-
-#         logits = policy(batch_states_t)
-#         dists = torch.distributions.Categorical(logits=logits)
-#         logp = dists.log_prob(batch_actions_t)
-#         loss = -(logp * batch_weights_t).mean()
-#         optimizer.zero_grad()
-#         loss.backward()
-#         optimizer.step()
-
-#         mean_reward = np.mean(batch_episode_rewards)
-#         all_mean_rewards.append(mean_reward)
-#         print(f"[PG] Iter {it+1}/{iterations} Mean reward: {mean_reward:.2f}")
-
-#     env.close()
-#     # plot
-#     plt.figure()
-#     plt.plot(all_mean_rewards)
-#     plt.title(f"Policy Gradient on {env_name} (reward_to_go={reward_to_go}, adv_norm={adv_norm})")
-#     plt.xlabel("Iteration")
-#     plt.ylabel("Mean episode reward")
-#     fname = os.path.join(PLOTS_DIR, f"pg_{env_name.replace('/', '_')}_{timestamp()}.png")
-#     plt.savefig(fname)
-#     plt.close()
-#     print(f"Saved PG plot: {fname}")
-
-#     return all_mean_rewards
 def pg_train(env_name="CartPole-v0", 
              iterations=50, 
              batch_size=5000, 
@@ -565,17 +448,14 @@ def pg_train(env_name="CartPole-v0",
     policy = PolicyMLP(state_dim, n_actions).to(device)
     optimizer = optim.Adam(policy.parameters(), lr=lr)
 
-    # checkpoint paths
-    # best_path = os.path.join(CKPT_DIR, f"pg_{env_name.replace('/', '_')}_best.pth")
     last_path = os.path.join(CKPT_DIR, f"pg_{env_name.replace('/', '_')}_last.pth")
 
-    # resume
+
     start_iter = 0
     all_mean_rewards = []
     best_mean = -float("inf")
 
     if use_resume:
-        # ckpt = best_path if resume_best else last_path
         ckpt= last_path
         if os.path.exists(ckpt):
             data = torch.load(ckpt, map_location=device, weights_only=False)
@@ -592,7 +472,6 @@ def pg_train(env_name="CartPole-v0",
         batch_states, batch_actions, batch_weights, batch_episode_rewards = [], [], [], []
         steps = 0
 
-        # collect trajectories until we reach desired batch size
         while steps < batch_size:
             obs, info = env.reset()
             done = False
@@ -620,12 +499,12 @@ def pg_train(env_name="CartPole-v0",
             batch_episode_rewards.append(sum(rewards))
             batch_weights += list(compute_returns(rewards, gamma, reward_to_go))
 
-        # prepare tensors
+
         batch_states_t = torch.tensor(np.array(batch_states), dtype=torch.float32, device=device)
         batch_actions_t = torch.tensor(batch_actions, dtype=torch.int64, device=device)
         batch_weights_t = torch.tensor(batch_weights, dtype=torch.float32, device=device)
 
-        # advantage normalization
+ 
         if adv_norm:
             mean = batch_weights_t.mean()
             std = batch_weights_t.std() + 1e-8
@@ -642,11 +521,9 @@ def pg_train(env_name="CartPole-v0",
 
         mean_reward = np.mean(batch_episode_rewards)
         all_mean_rewards.append(mean_reward)
-        # mean20 = np.mean(all_mean_rewards[-20:])
 
         print(f"[PG] Iter {it+1}/{iterations} | Mean Reward={mean_reward:.2f}")
 
-        # checkpoint saving
         if (it + 1) % save_every == 0:
             ckpt = {
                 "policy_state_dict": policy.state_dict(),
@@ -655,25 +532,20 @@ def pg_train(env_name="CartPole-v0",
                 "rewards": all_mean_rewards,
                 "best_mean": best_mean,
             }
-            # save last
             torch.save(ckpt, last_path)
-            print(f"Saved latest PG checkpoint (iter {it+1}) → {last_path}")
+            print(f"Saved latest PG checkpoint (iter {it+1}) - {last_path}")
 
-            # save best
-            # if mean20 > best_mean:
-            #     best_mean = mean20
-            #     torch.save(ckpt, best_path)
-            #     print(f"New best PG model saved (mean20={mean20:.2f}) → {best_path}")
+        
 
     env.close()
 
-    # plot
+
     plt.figure()
-    plt.plot(all_mean_rewards, label="Mean Reward per Iter")
-    # plt.plot([np.mean(all_mean_rewards[max(0,i-19):i+1]) for i in range(len(all_mean_rewards))],
-            #  label="Mean(20)")
+    plt.plot(all_mean_rewards, label="Mean Reward per Iter", color="blue")
+    plt.plot(prefix_max(all_mean_rewards), label="Best So Far", color="red", linestyle="--")
     plt.legend()
-    plt.title(f"PG on {env_name} (R2G={reward_to_go}, AdvNorm={adv_norm})")
+    plt.grid(True)
+    plt.title(f"PG on {env_name} Batch Size={batch_size}")
     plt.xlabel("Iteration")
     plt.ylabel("Mean Reward")
     fname = os.path.join(PLOTS_DIR, f"pg_{env_name.replace('/', '_')}_{timestamp()}.png")
@@ -685,10 +557,9 @@ def pg_train(env_name="CartPole-v0",
 
 
 def main():
-    # parser = argparse.ArgumentParser(description="Assignment 3: DQN and Policy Gradient utilities")
     parser = argparse.ArgumentParser(
         description="Assignment 3: DQN and Policy Gradient utilities",
-        # fromfile_prefix_chars='@'
+
     )
 
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -697,18 +568,7 @@ def main():
     p_probe.add_argument("--env", type=str, required=True)
     p_probe.add_argument("--episodes", type=int, default=3)
 
-    # dqn
-    # p_dqn = sub.add_parser("dqn", help="Run DQN")
-    # p_dqn.add_argument("--env", type=str, default="ALE/Pong-v5")
-    # p_dqn.add_argument("--episodes", type=int, default=200)  
-    # p_dqn.add_argument("--batch_size", type=int, default=32)
-    # p_dqn.add_argument("--lr", type=float, default=1e-4)
-    # p_dqn.add_argument("--buffer_capacity", type=int, default=100000)
-    # p_dqn.add_argument("--min_buffer_size", type=int, default=5000)
-    # p_dqn.add_argument("--target_update_steps", type=int, default=1000)
-    # p_dqn.add_argument("--epsilon_decay", type=int, default=50000)
-    # p_dqn.add_argument("--render", action="store_true")
-    # p_dqn.add_argument("--resume", action="store_true")
+
     p_dqn = sub.add_parser("dqn", help="Run DQN")
     p_dqn.add_argument("--env", type=str, default="ALE/Pong-v5")
     p_dqn.add_argument("--episodes", type=int, default=200)
@@ -727,23 +587,13 @@ def main():
     p_dqn.add_argument("--save_every", type=int, default=10, help="Save checkpoint every N episodes (default=10)")
 
 
-    # sweep
     p_sweep = sub.add_parser("dqn_sweep", help="Run DQN hyperparameter sweep")
     p_sweep.add_argument("--env", type=str, default="MountainCar-v0")
     p_sweep.add_argument("--param", type=str, required=True, help="parameter name to sweep (lr|batch_size|buffer_capacity)")
     p_sweep.add_argument("--values", type=str, required=True, help="comma-separated values")
     p_sweep.add_argument("--episodes", type=int, default=50)
 
-    # pg
-    # p_pg = sub.add_parser("pg", help="Run policy gradient (REINFORCE)")
-    # p_pg.add_argument("--env", type=str, default="CartPole-v0")
-    # p_pg.add_argument("--iterations", type=int, default=30)
-    # p_pg.add_argument("--batch_size", type=int, default=2000)
-    # p_pg.add_argument("--lr", type=float, default=1e-2)
-    # p_pg.add_argument("--gamma", type=float, default=0.99)
-    # p_pg.add_argument("--reward_to_go", action="store_true")
-    # p_pg.add_argument("--adv_norm", action="store_true")
-    # p_pg.add_argument("--render", action="store_true")
+
     p_pg = sub.add_parser("pg", help="Run policy gradient (REINFORCE)")
     p_pg.add_argument("--env", type=str, default="CartPole-v0")
     p_pg.add_argument("--iterations", type=int, default=30)
@@ -755,7 +605,6 @@ def main():
     p_pg.add_argument("--render", action="store_true")
     p_pg.add_argument("--save_every", type=int, default=10, help="Save checkpoint every N iterations")
     p_pg.add_argument("--resume", action="store_true", help="Resume from the latest PG checkpoint")
-    # p_pg.add_argument("--resume_best", action="store_true", help="Resume from the best PG checkpoint")
 
 
     args = parser.parse_args()
@@ -764,17 +613,6 @@ def main():
         probe_env(args.env, episodes=args.episodes)
 
     elif args.cmd == "dqn":
-        # dqn_train(env_name=args.env,
-        #           total_episodes=args.episodes,
-        #           batch_size=args.batch_size,
-        #           lr=args.lr,
-        #           buffer_capacity=args.buffer_capacity,
-        #           min_buffer_size=args.min_buffer_size,
-        #           target_update_steps=args.target_update_steps,
-        #           epsilon_decay=args.epsilon_decay,
-        #           render=args.render,
-        #           save_every=max(1, args.episodes // 10),
-        #           use_resume=args.resume)
         
         dqn_train(
             env_name=args.env,
@@ -797,16 +635,16 @@ def main():
 
     elif args.cmd == "dqn_sweep":
         param = args.param
-        vals = [float(v) if '.' in v else int(v) for v in args.values.split(",")]
-        base = {"total_episodes": args.episodes, "batch_size":32, "lr":1e-4, "buffer_capacity":100000, "min_buffer_size":5000, "target_update_steps":1000}
+        # vals = [float(v) if '.' in v else int(v) for v in args.values.split(",")]
+        vals = [float(v) for v in args.values.split(",")]
+
+        base = {"total_episodes": args.episodes, "batch_size":64, "lr":5e-4, "buffer_capacity":50000, "min_buffer_size":1000, "target_update_steps":500}
         if param not in base:
             print(f"Param {param} not supported for sweep. Supported: {list(base.keys())}")
             return
         dqn_sweep(env_name=args.env, param_name=param, param_values=vals, base_kwargs=base)
 
-    # elif args.cmd == "pg":
-    #     pg_train(env_name=args.env, iterations=args.iterations, batch_size=args.batch_size, lr=args.lr, gamma=args.gamma,
-    #              reward_to_go=args.reward_to_go, adv_norm=args.adv_norm, render=args.render)
+
     elif args.cmd == "pg":
         pg_train(env_name=args.env, iterations=args.iterations, batch_size=args.batch_size, lr=args.lr,
              gamma=args.gamma, reward_to_go=args.reward_to_go, adv_norm=args.adv_norm, render=args.render,

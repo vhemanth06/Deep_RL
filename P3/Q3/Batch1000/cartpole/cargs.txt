@@ -1,0 +1,1 @@
+python3 main.py pg --env CartPole-v1 --iterations 350 --batch_size 1000 --lr 0.001 --gamma 0.99 --reward_to_go --adv_norm 

@@ -1,0 +1,388 @@
+Using device: cpu
+PG training on CartPole-v1 | reward_to_go=True adv_norm=True
+[PG] Iter 1/350 | Mean Reward=19.72
+[PG] Iter 2/350 | Mean Reward=22.27
+[PG] Iter 3/350 | Mean Reward=21.99
+[PG] Iter 4/350 | Mean Reward=24.39
+[PG] Iter 5/350 | Mean Reward=22.91
+[PG] Iter 6/350 | Mean Reward=22.74
+[PG] Iter 7/350 | Mean Reward=23.95
+[PG] Iter 8/350 | Mean Reward=24.52
+[PG] Iter 9/350 | Mean Reward=23.45
+[PG] Iter 10/350 | Mean Reward=25.10
+Saved latest PG checkpoint (iter 10) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 11/350 | Mean Reward=27.55
+[PG] Iter 12/350 | Mean Reward=25.76
+[PG] Iter 13/350 | Mean Reward=25.12
+[PG] Iter 14/350 | Mean Reward=27.56
+[PG] Iter 15/350 | Mean Reward=26.33
+[PG] Iter 16/350 | Mean Reward=27.17
+[PG] Iter 17/350 | Mean Reward=28.29
+[PG] Iter 18/350 | Mean Reward=27.99
+[PG] Iter 19/350 | Mean Reward=29.77
+[PG] Iter 20/350 | Mean Reward=28.89
+Saved latest PG checkpoint (iter 20) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 21/350 | Mean Reward=28.33
+[PG] Iter 22/350 | Mean Reward=32.15
+[PG] Iter 23/350 | Mean Reward=31.05
+[PG] Iter 24/350 | Mean Reward=30.89
+[PG] Iter 25/350 | Mean Reward=33.35
+[PG] Iter 26/350 | Mean Reward=33.43
+[PG] Iter 27/350 | Mean Reward=33.71
+[PG] Iter 28/350 | Mean Reward=36.70
+[PG] Iter 29/350 | Mean Reward=34.32
+[PG] Iter 30/350 | Mean Reward=34.90
+Saved latest PG checkpoint (iter 30) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 31/350 | Mean Reward=38.80
+[PG] Iter 32/350 | Mean Reward=33.43
+[PG] Iter 33/350 | Mean Reward=43.86
+[PG] Iter 34/350 | Mean Reward=38.46
+[PG] Iter 35/350 | Mean Reward=40.10
+[PG] Iter 36/350 | Mean Reward=44.14
+[PG] Iter 37/350 | Mean Reward=50.78
+[PG] Iter 38/350 | Mean Reward=48.52
+[PG] Iter 39/350 | Mean Reward=43.15
+[PG] Iter 40/350 | Mean Reward=46.22
+Saved latest PG checkpoint (iter 40) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 41/350 | Mean Reward=46.74
+[PG] Iter 42/350 | Mean Reward=50.27
+[PG] Iter 43/350 | Mean Reward=52.10
+[PG] Iter 44/350 | Mean Reward=61.68
+[PG] Iter 45/350 | Mean Reward=53.34
+[PG] Iter 46/350 | Mean Reward=51.16
+[PG] Iter 47/350 | Mean Reward=53.96
+[PG] Iter 48/350 | Mean Reward=61.85
+[PG] Iter 49/350 | Mean Reward=61.51
+[PG] Iter 50/350 | Mean Reward=55.37
+Saved latest PG checkpoint (iter 50) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 51/350 | Mean Reward=65.56
+[PG] Iter 52/350 | Mean Reward=71.43
+[PG] Iter 53/350 | Mean Reward=66.00
+[PG] Iter 54/350 | Mean Reward=64.90
+[PG] Iter 55/350 | Mean Reward=66.55
+[PG] Iter 56/350 | Mean Reward=76.09
+[PG] Iter 57/350 | Mean Reward=88.14
+[PG] Iter 58/350 | Mean Reward=78.78
+[PG] Iter 59/350 | Mean Reward=98.23
+[PG] Iter 60/350 | Mean Reward=93.93
+Saved latest PG checkpoint (iter 60) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 61/350 | Mean Reward=94.63
+[PG] Iter 62/350 | Mean Reward=86.00
+[PG] Iter 63/350 | Mean Reward=111.88
+[PG] Iter 64/350 | Mean Reward=108.87
+[PG] Iter 65/350 | Mean Reward=110.48
+[PG] Iter 66/350 | Mean Reward=110.52
+[PG] Iter 67/350 | Mean Reward=182.14
+[PG] Iter 68/350 | Mean Reward=157.94
+[PG] Iter 69/350 | Mean Reward=126.67
+[PG] Iter 70/350 | Mean Reward=131.00
+Saved latest PG checkpoint (iter 70) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 71/350 | Mean Reward=165.41
+[PG] Iter 72/350 | Mean Reward=168.81
+[PG] Iter 73/350 | Mean Reward=201.00
+[PG] Iter 74/350 | Mean Reward=176.60
+[PG] Iter 75/350 | Mean Reward=175.31
+[PG] Iter 76/350 | Mean Reward=195.31
+[PG] Iter 77/350 | Mean Reward=141.50
+[PG] Iter 78/350 | Mean Reward=184.57
+[PG] Iter 79/350 | Mean Reward=195.62
+[PG] Iter 80/350 | Mean Reward=196.00
+Saved latest PG checkpoint (iter 80) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 81/350 | Mean Reward=203.00
+[PG] Iter 82/350 | Mean Reward=257.00
+[PG] Iter 83/350 | Mean Reward=184.07
+[PG] Iter 84/350 | Mean Reward=192.62
+[PG] Iter 85/350 | Mean Reward=188.93
+[PG] Iter 86/350 | Mean Reward=188.64
+[PG] Iter 87/350 | Mean Reward=161.69
+[PG] Iter 88/350 | Mean Reward=215.92
+[PG] Iter 89/350 | Mean Reward=216.50
+[PG] Iter 90/350 | Mean Reward=194.62
+Saved latest PG checkpoint (iter 90) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 91/350 | Mean Reward=218.67
+[PG] Iter 92/350 | Mean Reward=253.50
+[PG] Iter 93/350 | Mean Reward=261.70
+[PG] Iter 94/350 | Mean Reward=220.92
+[PG] Iter 95/350 | Mean Reward=292.60
+[PG] Iter 96/350 | Mean Reward=262.10
+[PG] Iter 97/350 | Mean Reward=218.42
+[PG] Iter 98/350 | Mean Reward=245.18
+[PG] Iter 99/350 | Mean Reward=288.78
+[PG] Iter 100/350 | Mean Reward=316.12
+Saved latest PG checkpoint (iter 100) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 101/350 | Mean Reward=255.82
+[PG] Iter 102/350 | Mean Reward=278.30
+[PG] Iter 103/350 | Mean Reward=305.33
+[PG] Iter 104/350 | Mean Reward=280.78
+[PG] Iter 105/350 | Mean Reward=339.75
+[PG] Iter 106/350 | Mean Reward=373.43
+[PG] Iter 107/350 | Mean Reward=263.00
+[PG] Iter 108/350 | Mean Reward=277.30
+[PG] Iter 109/350 | Mean Reward=217.25
+[PG] Iter 110/350 | Mean Reward=293.22
+Saved latest PG checkpoint (iter 110) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 111/350 | Mean Reward=318.12
+[PG] Iter 112/350 | Mean Reward=303.78
+[PG] Iter 113/350 | Mean Reward=304.11
+[PG] Iter 114/350 | Mean Reward=259.80
+[PG] Iter 115/350 | Mean Reward=230.64
+[PG] Iter 116/350 | Mean Reward=272.60
+[PG] Iter 117/350 | Mean Reward=241.09
+[PG] Iter 118/350 | Mean Reward=219.17
+[PG] Iter 119/350 | Mean Reward=237.73
+[PG] Iter 120/350 | Mean Reward=294.44
+Saved latest PG checkpoint (iter 120) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 121/350 | Mean Reward=313.25
+[PG] Iter 122/350 | Mean Reward=414.71
+[PG] Iter 123/350 | Mean Reward=430.83
+[PG] Iter 124/350 | Mean Reward=396.43
+[PG] Iter 125/350 | Mean Reward=351.62
+[PG] Iter 126/350 | Mean Reward=349.88
+[PG] Iter 127/350 | Mean Reward=360.14
+[PG] Iter 128/350 | Mean Reward=368.25
+[PG] Iter 129/350 | Mean Reward=368.57
+[PG] Iter 130/350 | Mean Reward=323.78
+Saved latest PG checkpoint (iter 130) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 131/350 | Mean Reward=304.78
+[PG] Iter 132/350 | Mean Reward=455.83
+[PG] Iter 133/350 | Mean Reward=420.00
+[PG] Iter 134/350 | Mean Reward=436.33
+[PG] Iter 135/350 | Mean Reward=339.50
+[PG] Iter 136/350 | Mean Reward=411.71
+[PG] Iter 137/350 | Mean Reward=368.29
+[PG] Iter 138/350 | Mean Reward=352.00
+[PG] Iter 139/350 | Mean Reward=500.00
+[PG] Iter 140/350 | Mean Reward=390.00
+Saved latest PG checkpoint (iter 140) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 141/350 | Mean Reward=357.57
+[PG] Iter 142/350 | Mean Reward=411.43
+[PG] Iter 143/350 | Mean Reward=375.86
+[PG] Iter 144/350 | Mean Reward=392.43
+[PG] Iter 145/350 | Mean Reward=440.17
+[PG] Iter 146/350 | Mean Reward=435.00
+[PG] Iter 147/350 | Mean Reward=474.17
+[PG] Iter 148/350 | Mean Reward=372.29
+[PG] Iter 149/350 | Mean Reward=369.57
+[PG] Iter 150/350 | Mean Reward=430.50
+Saved latest PG checkpoint (iter 150) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 151/350 | Mean Reward=393.29
+[PG] Iter 152/350 | Mean Reward=395.57
+[PG] Iter 153/350 | Mean Reward=341.75
+[PG] Iter 154/350 | Mean Reward=414.86
+[PG] Iter 155/350 | Mean Reward=439.83
+[PG] Iter 156/350 | Mean Reward=469.67
+[PG] Iter 157/350 | Mean Reward=386.00
+[PG] Iter 158/350 | Mean Reward=313.38
+[PG] Iter 159/350 | Mean Reward=346.00
+[PG] Iter 160/350 | Mean Reward=420.43
+Saved latest PG checkpoint (iter 160) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 161/350 | Mean Reward=328.12
+[PG] Iter 162/350 | Mean Reward=361.12
+[PG] Iter 163/350 | Mean Reward=386.29
+[PG] Iter 164/350 | Mean Reward=363.62
+[PG] Iter 165/350 | Mean Reward=473.17
+[PG] Iter 166/350 | Mean Reward=467.33
+[PG] Iter 167/350 | Mean Reward=486.83
+[PG] Iter 168/350 | Mean Reward=500.00
+[PG] Iter 169/350 | Mean Reward=463.50
+[PG] Iter 170/350 | Mean Reward=428.83
+Saved latest PG checkpoint (iter 170) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 171/350 | Mean Reward=448.83
+[PG] Iter 172/350 | Mean Reward=373.29
+[PG] Iter 173/350 | Mean Reward=423.00
+[PG] Iter 174/350 | Mean Reward=385.57
+[PG] Iter 175/350 | Mean Reward=464.33
+[PG] Iter 176/350 | Mean Reward=443.17
+[PG] Iter 177/350 | Mean Reward=435.17
+[PG] Iter 178/350 | Mean Reward=460.17
+[PG] Iter 179/350 | Mean Reward=377.43
+[PG] Iter 180/350 | Mean Reward=361.71
+Saved latest PG checkpoint (iter 180) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 181/350 | Mean Reward=434.67
+[PG] Iter 182/350 | Mean Reward=419.33
+[PG] Iter 183/350 | Mean Reward=485.17
+[PG] Iter 184/350 | Mean Reward=439.33
+[PG] Iter 185/350 | Mean Reward=429.17
+[PG] Iter 186/350 | Mean Reward=402.14
+[PG] Iter 187/350 | Mean Reward=375.29
+[PG] Iter 188/350 | Mean Reward=491.67
+[PG] Iter 189/350 | Mean Reward=445.33
+[PG] Iter 190/350 | Mean Reward=407.86
+Saved latest PG checkpoint (iter 190) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 191/350 | Mean Reward=488.50
+[PG] Iter 192/350 | Mean Reward=410.00
+[PG] Iter 193/350 | Mean Reward=421.86
+[PG] Iter 194/350 | Mean Reward=378.71
+[PG] Iter 195/350 | Mean Reward=355.12
+[PG] Iter 196/350 | Mean Reward=360.12
+[PG] Iter 197/350 | Mean Reward=339.50
+[PG] Iter 198/350 | Mean Reward=323.50
+[PG] Iter 199/350 | Mean Reward=324.00
+[PG] Iter 200/350 | Mean Reward=335.38
+Saved latest PG checkpoint (iter 200) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 201/350 | Mean Reward=349.75
+[PG] Iter 202/350 | Mean Reward=367.71
+[PG] Iter 203/350 | Mean Reward=469.83
+[PG] Iter 204/350 | Mean Reward=483.50
+[PG] Iter 205/350 | Mean Reward=467.00
+[PG] Iter 206/350 | Mean Reward=352.00
+[PG] Iter 207/350 | Mean Reward=442.17
+[PG] Iter 208/350 | Mean Reward=439.67
+[PG] Iter 209/350 | Mean Reward=427.00
+[PG] Iter 210/350 | Mean Reward=469.83
+Saved latest PG checkpoint (iter 210) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 211/350 | Mean Reward=452.00
+[PG] Iter 212/350 | Mean Reward=424.00
+[PG] Iter 213/350 | Mean Reward=410.14
+[PG] Iter 214/350 | Mean Reward=423.71
+[PG] Iter 215/350 | Mean Reward=454.33
+[PG] Iter 216/350 | Mean Reward=474.83
+[PG] Iter 217/350 | Mean Reward=500.00
+[PG] Iter 218/350 | Mean Reward=468.67
+[PG] Iter 219/350 | Mean Reward=459.00
+[PG] Iter 220/350 | Mean Reward=438.83
+Saved latest PG checkpoint (iter 220) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 221/350 | Mean Reward=485.00
+[PG] Iter 222/350 | Mean Reward=409.00
+[PG] Iter 223/350 | Mean Reward=431.83
+[PG] Iter 224/350 | Mean Reward=460.17
+[PG] Iter 225/350 | Mean Reward=453.50
+[PG] Iter 226/350 | Mean Reward=492.50
+[PG] Iter 227/350 | Mean Reward=500.00
+[PG] Iter 228/350 | Mean Reward=500.00
+[PG] Iter 229/350 | Mean Reward=423.14
+[PG] Iter 230/350 | Mean Reward=462.33
+Saved latest PG checkpoint (iter 230) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 231/350 | Mean Reward=454.33
+[PG] Iter 232/350 | Mean Reward=500.00
+[PG] Iter 233/350 | Mean Reward=474.50
+[PG] Iter 234/350 | Mean Reward=430.00
+[PG] Iter 235/350 | Mean Reward=500.00
+[PG] Iter 236/350 | Mean Reward=492.33
+[PG] Iter 237/350 | Mean Reward=464.83
+[PG] Iter 238/350 | Mean Reward=420.83
+[PG] Iter 239/350 | Mean Reward=407.43
+[PG] Iter 240/350 | Mean Reward=396.14
+Saved latest PG checkpoint (iter 240) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 241/350 | Mean Reward=457.33
+[PG] Iter 242/350 | Mean Reward=454.67
+[PG] Iter 243/350 | Mean Reward=500.00
+[PG] Iter 244/350 | Mean Reward=435.50
+[PG] Iter 245/350 | Mean Reward=500.00
+[PG] Iter 246/350 | Mean Reward=350.38
+[PG] Iter 247/350 | Mean Reward=453.50
+[PG] Iter 248/350 | Mean Reward=388.43
+[PG] Iter 249/350 | Mean Reward=424.14
+[PG] Iter 250/350 | Mean Reward=427.00
+Saved latest PG checkpoint (iter 250) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 251/350 | Mean Reward=354.75
+[PG] Iter 252/350 | Mean Reward=472.33
+[PG] Iter 253/350 | Mean Reward=391.43
+[PG] Iter 254/350 | Mean Reward=428.43
+[PG] Iter 255/350 | Mean Reward=313.78
+[PG] Iter 256/350 | Mean Reward=418.67
+[PG] Iter 257/350 | Mean Reward=346.25
+[PG] Iter 258/350 | Mean Reward=421.43
+[PG] Iter 259/350 | Mean Reward=367.14
+[PG] Iter 260/350 | Mean Reward=381.71
+Saved latest PG checkpoint (iter 260) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 261/350 | Mean Reward=455.83
+[PG] Iter 262/350 | Mean Reward=411.86
+[PG] Iter 263/350 | Mean Reward=443.67
+[PG] Iter 264/350 | Mean Reward=427.14
+[PG] Iter 265/350 | Mean Reward=424.33
+[PG] Iter 266/350 | Mean Reward=469.33
+[PG] Iter 267/350 | Mean Reward=461.33
+[PG] Iter 268/350 | Mean Reward=421.33
+[PG] Iter 269/350 | Mean Reward=491.00
+[PG] Iter 270/350 | Mean Reward=453.00
+Saved latest PG checkpoint (iter 270) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 271/350 | Mean Reward=500.00
+[PG] Iter 272/350 | Mean Reward=452.17
+[PG] Iter 273/350 | Mean Reward=453.00
+[PG] Iter 274/350 | Mean Reward=466.00
+[PG] Iter 275/350 | Mean Reward=500.00
+[PG] Iter 276/350 | Mean Reward=415.86
+[PG] Iter 277/350 | Mean Reward=463.17
+[PG] Iter 278/350 | Mean Reward=500.00
+[PG] Iter 279/350 | Mean Reward=465.67
+[PG] Iter 280/350 | Mean Reward=500.00
+Saved latest PG checkpoint (iter 280) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 281/350 | Mean Reward=486.17
+[PG] Iter 282/350 | Mean Reward=454.67
+[PG] Iter 283/350 | Mean Reward=409.86
+[PG] Iter 284/350 | Mean Reward=500.00
+[PG] Iter 285/350 | Mean Reward=500.00
+[PG] Iter 286/350 | Mean Reward=492.50
+[PG] Iter 287/350 | Mean Reward=500.00
+[PG] Iter 288/350 | Mean Reward=500.00
+[PG] Iter 289/350 | Mean Reward=479.00
+[PG] Iter 290/350 | Mean Reward=469.67
+Saved latest PG checkpoint (iter 290) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 291/350 | Mean Reward=474.83
+[PG] Iter 292/350 | Mean Reward=458.83
+[PG] Iter 293/350 | Mean Reward=500.00
+[PG] Iter 294/350 | Mean Reward=500.00
+[PG] Iter 295/350 | Mean Reward=500.00
+[PG] Iter 296/350 | Mean Reward=473.33
+[PG] Iter 297/350 | Mean Reward=500.00
+[PG] Iter 298/350 | Mean Reward=500.00
+[PG] Iter 299/350 | Mean Reward=500.00
+[PG] Iter 300/350 | Mean Reward=500.00
+Saved latest PG checkpoint (iter 300) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 301/350 | Mean Reward=500.00
+[PG] Iter 302/350 | Mean Reward=500.00
+[PG] Iter 303/350 | Mean Reward=500.00
+[PG] Iter 304/350 | Mean Reward=500.00
+[PG] Iter 305/350 | Mean Reward=500.00
+[PG] Iter 306/350 | Mean Reward=500.00
+[PG] Iter 307/350 | Mean Reward=500.00
+[PG] Iter 308/350 | Mean Reward=458.17
+[PG] Iter 309/350 | Mean Reward=500.00
+[PG] Iter 310/350 | Mean Reward=453.67
+Saved latest PG checkpoint (iter 310) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 311/350 | Mean Reward=500.00
+[PG] Iter 312/350 | Mean Reward=500.00
+[PG] Iter 313/350 | Mean Reward=500.00
+[PG] Iter 314/350 | Mean Reward=500.00
+[PG] Iter 315/350 | Mean Reward=500.00
+[PG] Iter 316/350 | Mean Reward=500.00
+[PG] Iter 317/350 | Mean Reward=500.00
+[PG] Iter 318/350 | Mean Reward=500.00
+[PG] Iter 319/350 | Mean Reward=443.17
+[PG] Iter 320/350 | Mean Reward=483.50
+Saved latest PG checkpoint (iter 320) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 321/350 | Mean Reward=488.17
+[PG] Iter 322/350 | Mean Reward=465.17
+[PG] Iter 323/350 | Mean Reward=500.00
+[PG] Iter 324/350 | Mean Reward=500.00
+[PG] Iter 325/350 | Mean Reward=500.00
+[PG] Iter 326/350 | Mean Reward=500.00
+[PG] Iter 327/350 | Mean Reward=500.00
+[PG] Iter 328/350 | Mean Reward=500.00
+[PG] Iter 329/350 | Mean Reward=488.00
+[PG] Iter 330/350 | Mean Reward=500.00
+Saved latest PG checkpoint (iter 330) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 331/350 | Mean Reward=415.43
+[PG] Iter 332/350 | Mean Reward=500.00
+[PG] Iter 333/350 | Mean Reward=472.67
+[PG] Iter 334/350 | Mean Reward=500.00
+[PG] Iter 335/350 | Mean Reward=500.00
+[PG] Iter 336/350 | Mean Reward=484.67
+[PG] Iter 337/350 | Mean Reward=457.00
+[PG] Iter 338/350 | Mean Reward=500.00
+[PG] Iter 339/350 | Mean Reward=500.00
+[PG] Iter 340/350 | Mean Reward=500.00
+Saved latest PG checkpoint (iter 340) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+[PG] Iter 341/350 | Mean Reward=500.00
+[PG] Iter 342/350 | Mean Reward=500.00
+[PG] Iter 343/350 | Mean Reward=500.00
+[PG] Iter 344/350 | Mean Reward=500.00
+[PG] Iter 345/350 | Mean Reward=500.00
+[PG] Iter 346/350 | Mean Reward=500.00
+[PG] Iter 347/350 | Mean Reward=500.00
+[PG] Iter 348/350 | Mean Reward=500.00
+[PG] Iter 349/350 | Mean Reward=500.00
+[PG] Iter 350/350 | Mean Reward=500.00
+Saved latest PG checkpoint (iter 350) - P3/Q3/Batch2500/cartpole/checkpoints/pg_CartPole-v1_last.pth
+Saved PG plot: P3/Q3/Batch2500/cartpole/plots/pg_CartPole-v1_20251102_185905.png

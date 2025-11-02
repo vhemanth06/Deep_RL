@@ -1,0 +1,1 @@
+python3 main.py dqn_sweep --env MountainCar-v0 --param lr --values 5e-5,1e-4,5e-4,1e-3 --episodes 1500

@@ -1,0 +1,31 @@
+
+CartPole-v1
+Observation space: Box([-4.8               -inf -0.41887903        -inf], [4.8               inf 0.41887903        inf], (4,), float32)
+Action space: Discrete(2)
+Random policy episode 1: reward = 13.0
+Random policy episode 2: reward = 24.0
+Random policy episode 3: reward = 20.0
+Random policy episode 4: reward = 17.0
+Random policy episode 5: reward = 38.0
+Random policy episode 6: reward = 13.0
+Random policy episode 7: reward = 23.0
+Random policy episode 8: reward = 13.0
+Random policy episode 9: reward = 10.0
+Random policy episode 10: reward = 18.0
+
+LunarLander-v3
+Observation space: Box([ -2.5        -2.5       -10.        -10.         -6.2831855 -10.
+  -0.         -0.       ], [ 2.5        2.5       10.        10.         6.2831855 10.
+  1.         1.       ], (8,), float32)
+Action space: Discrete(4)
+Random policy episode 1: reward = -175.19409488179514
+Random policy episode 2: reward = -2.000299155966715
+Random policy episode 3: reward = -103.39159810185652
+Random policy episode 4: reward = -260.98215248633926
+Random policy episode 5: reward = -162.4680749718187
+Random policy episode 6: reward = -306.9835866153568
+Random policy episode 7: reward = -428.2427937542936
+Random policy episode 8: reward = -224.64721249825377
+Random policy episode 9: reward = -119.23994865870142
+Random policy episode 10: reward = -101.1286529394615
+
