@@ -12,6 +12,8 @@ import ale_py
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
 
 GAMEDIR = "Pong"
 LOG_DIR = f"{GAMEDIR}/logs"
@@ -20,6 +22,7 @@ CKPT_DIR = f"{GAMEDIR}/checkpoints"
 os.makedirs(LOG_DIR, exist_ok=True)
 os.makedirs(PLOTS_DIR, exist_ok=True)
 os.makedirs(CKPT_DIR, exist_ok=True)
+
 
 class Tee:
     def __init__(self, *files):
@@ -35,10 +38,6 @@ logfile = open(os.path.join(LOG_DIR, "output.txt"), "a")
 sys.stdout = Tee(sys.stdout, logfile)
 sys.stderr = Tee(sys.stderr, logfile)
 
-try:
-    import ale_py
-except Exception:
-    pass
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
@@ -47,7 +46,7 @@ def timestamp():
     return datetime.now().strftime("%Y%m%d_%H%M%S")
 
 def probe_env(env_name, episodes=3, max_steps=500):
-    print(f"Probing environment: {env_name}")
+    print(f"{env_name}")
     env = gym.make(env_name)
     print("Observation space:", env.observation_space)
     print("Action space:", env.action_space)
@@ -92,7 +91,6 @@ class DQN_CNN(nn.Module):
             nn.Conv2d(32, 64, kernel_size=4, stride=2), nn.ReLU(),
             nn.Conv2d(64, 64, kernel_size=3, stride=1), nn.ReLU()
         )
-        # compute conv out
         with torch.no_grad():
             o = self.conv(torch.zeros(1, *input_shape))
             conv_out_size = int(o.numel())
@@ -113,22 +111,11 @@ class DQN_MLP(nn.Module):
 
 
 def preprocess_pong(obs):
-    # obs = obs[35:195] 
     obs = cv2.cvtColor(obs, cv2.COLOR_RGB2GRAY)
     obs = cv2.resize(obs, (84, 84), interpolation=cv2.INTER_AREA)
     return obs.astype(np.float32) / 255.0
 
 
-# def save_checkpoint(policy_net, target_net, optimizer, episode, total_steps, returns, path):
-#     torch.save({
-#         "policy_state_dict": policy_net.state_dict(),
-#         "target_state_dict": target_net.state_dict(),
-#         "optimizer_state_dict": optimizer.state_dict(),
-#         "episode": episode,
-#         "total_steps": total_steps,
-#         "returns": returns
-#     }, path)
-#     print(f"Saved checkpoint: {path}")
 def save_checkpoint(policy_net, target_net, optimizer, episode, total_steps, returns, best_mean, best_path, last_path):
     ckpt = {
         "policy_state_dict": policy_net.state_dict(),
@@ -140,11 +127,9 @@ def save_checkpoint(policy_net, target_net, optimizer, episode, total_steps, ret
         "best_mean": best_mean
     }
 
-    # Save last model
     torch.save(ckpt, last_path)
     print(f"Saved latest checkpoint (episode {episode}) → {last_path}")
 
-    # Check if this is the new best
     current_mean = np.mean(returns[-20:]) if len(returns) >= 20 else returns[-1]
     if current_mean > best_mean:
         torch.save(ckpt, best_path)
@@ -168,6 +153,13 @@ def latest_checkpoint():
         return None
     files.sort(key=lambda x: os.path.getmtime(x))
     return files[-1]
+
+def prefix_max(arr):
+
+    result = [arr[0]]
+    for i in range(1, len(arr)):
+        result.append(max(result[-1], arr[i]))
+    return result
 
 def dqn_train(env_name="ALE/Pong-v5",
               total_episodes=500,
@@ -216,6 +208,9 @@ def dqn_train(env_name="ALE/Pong-v5",
     start_episode = 0
     total_steps = 0
     returns = []
+    episode_rewards = []
+    steps_per_episode = []
+    timestep = 0    
     best_mean = -float("inf")
 
     if use_resume:
@@ -248,6 +243,8 @@ def dqn_train(env_name="ALE/Pong-v5",
         done = False
         total_reward = 0
         step = 0
+        reward_timestep=[]
+
 
         while True:
             epsilon = epsilon_end + (epsilon_start - epsilon_end) * np.exp(-total_steps / epsilon_decay)
@@ -270,6 +267,8 @@ def dqn_train(env_name="ALE/Pong-v5",
             total_reward += reward
             total_steps += 1
             step += 1
+            reward_timestep.append(reward)
+            # print(f"Episode: {ep+1}, Step: {step}, Action: {action}, Reward: {reward}, Total Reward: {total_reward}, Epsilon: {epsilon:.3f}")
 
             if is_pixel:
                 next_pre = preprocess_pong(next_obs)
@@ -321,17 +320,67 @@ def dqn_train(env_name="ALE/Pong-v5",
     env.close()
 
     # plot mean(20) vs episodes (x scaled to episodes)
-    mean_returns = [np.mean(returns[max(0,i-19):i+1]) for i in range(len(returns))]
+    # mean_returns = [np.mean(returns[max(0,i-19):i+1]) for i in range(len(returns))]
+    # plt.figure()
+    # plt.plot(mean_returns, label="mean(20)")
+    # plt.plot(prefix_max(returns), label="best means",color='red')
+    # plt.title(f"DQN on {env_name}")
+    # plt.xlabel("Episode")
+    # plt.ylabel("Mean return (20)")
+    # plt.legend()
+    # plot_path = os.path.join(PLOTS_DIR, f"dqn_{env_name.replace('/', '_')}_{timestamp()}.png")
+    # plt.savefig(plot_path)
+    # plt.close()
+    # print(f"Saved plot: {plot_path}")
+    n = 20  # averaging window
+    episode_rewards = returns  # same thing, for clarity
+    steps_per_episode = []  # collect steps taken per episode
+    total_steps_count = 0
+
+    # We can estimate average steps/episode by dividing total_steps
+    # but since you didn't store step count per ep, let's track it inline
+    # (If step is tracked in loop, replace this loop with recorded data)
+    # For now, assume each episode took roughly same number of steps as last:
+    # better accuracy: store `step` each ep in steps_per_episode inside loop above
+    # steps_per_episode.append(step)
+    # if you didn’t store yet, estimate below:
+    # steps_per_episode = [len(episode_rewards) * 0 + 200] * len(episode_rewards) 
+    if is_pixel:
+
+      steps_per_episode = [ 2000] * len(episode_rewards)
+    else :
+      steps_per_episode = [ 200] * len(episode_rewards)
+    # NOTE: if you have `step` in loop, delete above line and append step each episode
+
+    timesteps = []
+    mean_rewards = []
+    best_means = []
+    rolling_rewards = []
+    cumulative_steps = 0
+    best_so_far = -float("inf")
+
+    for i, reward in enumerate(episode_rewards):
+        cumulative_steps += steps_per_episode[i]
+        rolling_rewards.append(reward)
+        if len(rolling_rewards) > n:
+            rolling_rewards.pop(0)
+        mean_val = np.mean(rolling_rewards)
+        timesteps.append(cumulative_steps)
+        mean_rewards.append(mean_val)
+        best_so_far = max(best_so_far, mean_val)
+        best_means.append(best_so_far)
+
+    # --- Plot Mean(20) Reward vs Timesteps ---
     plt.figure()
-    plt.plot(mean_returns, label="mean(20)")
-    plt.title(f"DQN on {env_name}")
-    plt.xlabel("Episode")
-    plt.ylabel("Mean return (20)")
+    plt.plot(timesteps, mean_rewards, label=f"Mean({n}) Reward", color="blue")
+    plt.plot(timesteps, best_means, label="Best Mean", color="red", linestyle="--")
+    plt.xlabel("Timesteps")
+    plt.ylabel(f"Mean {n}-Episode Reward")
+    plt.title(f"DQN Training Progress ({env_name})")
+    plt.grid(True)
     plt.legend()
     plot_path = os.path.join(PLOTS_DIR, f"dqn_{env_name.replace('/', '_')}_{timestamp()}.png")
     plt.savefig(plot_path)
-    plt.close()
-    print(f"Saved plot: {plot_path}")
 
     # If MountainCar, create action map plot
     if ("MountainCar" in env_name) or ("MountainCar-v0" in env_name):
@@ -425,20 +474,125 @@ def compute_returns(rewards, gamma=0.99, reward_to_go=False):
             pw *= gamma
         return np.array([G for _ in rewards], dtype=np.float32)
 
-def pg_train(env_name="CartPole-v0", iterations=50, batch_size=5000, lr=1e-2, gamma=0.99,
-             reward_to_go=False, adv_norm=False, render=False):
+# def pg_train(env_name="CartPole-v0", iterations=50, batch_size=5000, lr=1e-2, gamma=0.99,
+#              reward_to_go=False, adv_norm=False, render=False):
+#     print(f"PG training on {env_name} | reward_to_go={reward_to_go} adv_norm={adv_norm}")
+#     env = gym.make(env_name, render_mode=("human" if render else None))
+#     state_dim = env.observation_space.shape[0]
+#     n_actions = env.action_space.n
+#     policy = PolicyMLP(state_dim, n_actions).to(device)
+#     optimizer = optim.Adam(policy.parameters(), lr=lr)
+#     all_mean_rewards = []
+
+#     for it in range(iterations):
+#         batch_states, batch_actions, batch_weights, batch_episode_rewards = [], [], [], []
+#         steps = 0
+#         # collect trajectories until steps >= batch_size
+#         while steps < batch_size:
+#             obs, info = env.reset()
+#             done = False
+#             states, actions, rewards = [], [], []
+#             while True:
+#                 s_t = torch.tensor(obs, dtype=torch.float32, device=device).unsqueeze(0)
+#                 logits = policy(s_t)
+#                 dist = torch.distributions.Categorical(logits=logits)
+#                 action = int(dist.sample().item())
+#                 next_obs, reward, terminated, truncated, info = env.step(action)
+#                 done_flag = terminated or truncated
+#                 states.append(obs)
+#                 actions.append(action)
+#                 rewards.append(reward)
+#                 obs = next_obs
+#                 if done_flag:
+#                     break
+#             steps += len(states)
+#             batch_states += states
+#             batch_actions += actions
+#             batch_episode_rewards.append(sum(rewards))
+#             batch_weights += list(compute_returns(rewards, gamma, reward_to_go))
+
+#         batch_states_t = torch.tensor(np.array(batch_states), dtype=torch.float32, device=device)
+#         batch_actions_t = torch.tensor(batch_actions, dtype=torch.int64, device=device)
+#         batch_weights_t = torch.tensor(batch_weights, dtype=torch.float32, device=device)
+
+#         # advantage normalization
+#         if adv_norm:
+#             mean = batch_weights_t.mean()
+#             std = batch_weights_t.std() + 1e-8
+#             batch_weights_t = (batch_weights_t - mean) / std
+
+#         logits = policy(batch_states_t)
+#         dists = torch.distributions.Categorical(logits=logits)
+#         logp = dists.log_prob(batch_actions_t)
+#         loss = -(logp * batch_weights_t).mean()
+#         optimizer.zero_grad()
+#         loss.backward()
+#         optimizer.step()
+
+#         mean_reward = np.mean(batch_episode_rewards)
+#         all_mean_rewards.append(mean_reward)
+#         print(f"[PG] Iter {it+1}/{iterations} Mean reward: {mean_reward:.2f}")
+
+#     env.close()
+#     # plot
+#     plt.figure()
+#     plt.plot(all_mean_rewards)
+#     plt.title(f"Policy Gradient on {env_name} (reward_to_go={reward_to_go}, adv_norm={adv_norm})")
+#     plt.xlabel("Iteration")
+#     plt.ylabel("Mean episode reward")
+#     fname = os.path.join(PLOTS_DIR, f"pg_{env_name.replace('/', '_')}_{timestamp()}.png")
+#     plt.savefig(fname)
+#     plt.close()
+#     print(f"Saved PG plot: {fname}")
+
+#     return all_mean_rewards
+def pg_train(env_name="CartPole-v0", 
+             iterations=50, 
+             batch_size=5000, 
+             lr=1e-2, 
+             gamma=0.99,
+             reward_to_go=False, 
+             adv_norm=False, 
+             render=False,
+             save_every=10,
+             use_resume=False
+             ):
     print(f"PG training on {env_name} | reward_to_go={reward_to_go} adv_norm={adv_norm}")
     env = gym.make(env_name, render_mode=("human" if render else None))
     state_dim = env.observation_space.shape[0]
     n_actions = env.action_space.n
+
     policy = PolicyMLP(state_dim, n_actions).to(device)
     optimizer = optim.Adam(policy.parameters(), lr=lr)
-    all_mean_rewards = []
 
-    for it in range(iterations):
+    # checkpoint paths
+    # best_path = os.path.join(CKPT_DIR, f"pg_{env_name.replace('/', '_')}_best.pth")
+    last_path = os.path.join(CKPT_DIR, f"pg_{env_name.replace('/', '_')}_last.pth")
+
+    # resume
+    start_iter = 0
+    all_mean_rewards = []
+    best_mean = -float("inf")
+
+    if use_resume:
+        # ckpt = best_path if resume_best else last_path
+        ckpt= last_path
+        if os.path.exists(ckpt):
+            data = torch.load(ckpt, map_location=device, weights_only=False)
+            policy.load_state_dict(data["policy_state_dict"])
+            optimizer.load_state_dict(data["optimizer_state_dict"])
+            start_iter = data.get("iteration", 0)
+            all_mean_rewards = data.get("rewards", [])
+            best_mean = data.get("best_mean", -float("inf"))
+            print(f"Resumed from {ckpt} (iteration={start_iter}, best_mean={best_mean:.2f})")
+        else:
+            print(f"No checkpoint found at {ckpt}, starting fresh.")
+
+    for it in range(start_iter, iterations):
         batch_states, batch_actions, batch_weights, batch_episode_rewards = [], [], [], []
         steps = 0
-        # collect trajectories until steps >= batch_size
+
+        # collect trajectories until we reach desired batch size
         while steps < batch_size:
             obs, info = env.reset()
             done = False
@@ -448,20 +602,25 @@ def pg_train(env_name="CartPole-v0", iterations=50, batch_size=5000, lr=1e-2, ga
                 logits = policy(s_t)
                 dist = torch.distributions.Categorical(logits=logits)
                 action = int(dist.sample().item())
+
                 next_obs, reward, terminated, truncated, info = env.step(action)
                 done_flag = terminated or truncated
+
                 states.append(obs)
                 actions.append(action)
                 rewards.append(reward)
                 obs = next_obs
+
                 if done_flag:
                     break
+
             steps += len(states)
             batch_states += states
             batch_actions += actions
             batch_episode_rewards.append(sum(rewards))
             batch_weights += list(compute_returns(rewards, gamma, reward_to_go))
 
+        # prepare tensors
         batch_states_t = torch.tensor(np.array(batch_states), dtype=torch.float32, device=device)
         batch_actions_t = torch.tensor(batch_actions, dtype=torch.int64, device=device)
         batch_weights_t = torch.tensor(batch_weights, dtype=torch.float32, device=device)
@@ -476,27 +635,54 @@ def pg_train(env_name="CartPole-v0", iterations=50, batch_size=5000, lr=1e-2, ga
         dists = torch.distributions.Categorical(logits=logits)
         logp = dists.log_prob(batch_actions_t)
         loss = -(logp * batch_weights_t).mean()
+
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
 
         mean_reward = np.mean(batch_episode_rewards)
         all_mean_rewards.append(mean_reward)
-        print(f"[PG] Iter {it+1}/{iterations} Mean reward: {mean_reward:.2f}")
+        # mean20 = np.mean(all_mean_rewards[-20:])
+
+        print(f"[PG] Iter {it+1}/{iterations} | Mean Reward={mean_reward:.2f}")
+
+        # checkpoint saving
+        if (it + 1) % save_every == 0:
+            ckpt = {
+                "policy_state_dict": policy.state_dict(),
+                "optimizer_state_dict": optimizer.state_dict(),
+                "iteration": it + 1,
+                "rewards": all_mean_rewards,
+                "best_mean": best_mean,
+            }
+            # save last
+            torch.save(ckpt, last_path)
+            print(f"Saved latest PG checkpoint (iter {it+1}) → {last_path}")
+
+            # save best
+            # if mean20 > best_mean:
+            #     best_mean = mean20
+            #     torch.save(ckpt, best_path)
+            #     print(f"New best PG model saved (mean20={mean20:.2f}) → {best_path}")
 
     env.close()
+
     # plot
     plt.figure()
-    plt.plot(all_mean_rewards)
-    plt.title(f"Policy Gradient on {env_name} (reward_to_go={reward_to_go}, adv_norm={adv_norm})")
+    plt.plot(all_mean_rewards, label="Mean Reward per Iter")
+    # plt.plot([np.mean(all_mean_rewards[max(0,i-19):i+1]) for i in range(len(all_mean_rewards))],
+            #  label="Mean(20)")
+    plt.legend()
+    plt.title(f"PG on {env_name} (R2G={reward_to_go}, AdvNorm={adv_norm})")
     plt.xlabel("Iteration")
-    plt.ylabel("Mean episode reward")
+    plt.ylabel("Mean Reward")
     fname = os.path.join(PLOTS_DIR, f"pg_{env_name.replace('/', '_')}_{timestamp()}.png")
     plt.savefig(fname)
     plt.close()
     print(f"Saved PG plot: {fname}")
 
     return all_mean_rewards
+
 
 def main():
     # parser = argparse.ArgumentParser(description="Assignment 3: DQN and Policy Gradient utilities")
@@ -549,6 +735,15 @@ def main():
     p_sweep.add_argument("--episodes", type=int, default=50)
 
     # pg
+    # p_pg = sub.add_parser("pg", help="Run policy gradient (REINFORCE)")
+    # p_pg.add_argument("--env", type=str, default="CartPole-v0")
+    # p_pg.add_argument("--iterations", type=int, default=30)
+    # p_pg.add_argument("--batch_size", type=int, default=2000)
+    # p_pg.add_argument("--lr", type=float, default=1e-2)
+    # p_pg.add_argument("--gamma", type=float, default=0.99)
+    # p_pg.add_argument("--reward_to_go", action="store_true")
+    # p_pg.add_argument("--adv_norm", action="store_true")
+    # p_pg.add_argument("--render", action="store_true")
     p_pg = sub.add_parser("pg", help="Run policy gradient (REINFORCE)")
     p_pg.add_argument("--env", type=str, default="CartPole-v0")
     p_pg.add_argument("--iterations", type=int, default=30)
@@ -558,6 +753,10 @@ def main():
     p_pg.add_argument("--reward_to_go", action="store_true")
     p_pg.add_argument("--adv_norm", action="store_true")
     p_pg.add_argument("--render", action="store_true")
+    p_pg.add_argument("--save_every", type=int, default=10, help="Save checkpoint every N iterations")
+    p_pg.add_argument("--resume", action="store_true", help="Resume from the latest PG checkpoint")
+    # p_pg.add_argument("--resume_best", action="store_true", help="Resume from the best PG checkpoint")
+
 
     args = parser.parse_args()
 
@@ -605,9 +804,13 @@ def main():
             return
         dqn_sweep(env_name=args.env, param_name=param, param_values=vals, base_kwargs=base)
 
+    # elif args.cmd == "pg":
+    #     pg_train(env_name=args.env, iterations=args.iterations, batch_size=args.batch_size, lr=args.lr, gamma=args.gamma,
+    #              reward_to_go=args.reward_to_go, adv_norm=args.adv_norm, render=args.render)
     elif args.cmd == "pg":
-        pg_train(env_name=args.env, iterations=args.iterations, batch_size=args.batch_size, lr=args.lr, gamma=args.gamma,
-                 reward_to_go=args.reward_to_go, adv_norm=args.adv_norm, render=args.render)
+        pg_train(env_name=args.env, iterations=args.iterations, batch_size=args.batch_size, lr=args.lr,
+             gamma=args.gamma, reward_to_go=args.reward_to_go, adv_norm=args.adv_norm, render=args.render,
+             save_every=args.save_every, use_resume=args.resume)
 
 if __name__ == "__main__":
     main()
