@@ -1,6 +1,7 @@
 # Deep_RL
 ```bash
 .
+├── Assignment-3.pdf
 ├── main.py
 ├── P1
 │   ├── Q1
@@ -132,5 +133,5 @@
 ├── README.md
 └── Report.pdf
 
-53 directories, 78 files
+53 directories, 79 files
 ```
