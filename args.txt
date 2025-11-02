@@ -1,2 +1,0 @@
-python3 main.py dqn --env ALE/Pong-v5 --episodes 1000 --batch_size 32 --gamma 0.99 --lr 2e-4 --buffer_capacity 10000 --min_buffer_size 5000 --target_update_steps 5000 --epsilon_start 1.0 --epsilon_end 0.05 --epsilon_decay 500000 --save_every 10 --resume 
-
